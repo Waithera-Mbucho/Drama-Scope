@@ -1,0 +1,58 @@
+#<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DramaScope – Discover Dramas</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Minimal styling so you can see it work without style.css */
+    body { font-family: system-ui, sans-serif; margin: 0; }
+    header { background:#111; color:#fff; padding:1rem; text-align:center; }
+    main { display:flex; flex-wrap:wrap; gap:1rem; padding:1rem; }
+    #filters { flex:1 1 260px; max-width:300px; border:1px solid #ccc; padding:1rem; }
+    #dramaList { flex:3 1 400px; display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:1rem; }
+    .drama-card { border:1px solid #ddd; border-radius:8px; overflow:hidden; }
+    .drama-card img { width:100%; height:260px; object-fit:cover; }
+    .drama-card h3 { margin:0.5rem; font-size:1rem; }
+    .badge { display:inline-block; padding:2px 6px; margin:2px 2px; font-size:0.7rem; background:#eee; border-radius:4px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>DramaScope</h1>
+    <p>Filter by Genre, Trope & Search 🔍</p>
+  </header>
+
+  <main>
+    <!-- FILTERS PANEL -->
+    <aside id="filters">
+      <h2>Filters</h2>
+
+      <!-- Search -->
+      <label for="searchBar"><strong>Search Title</strong></label>
+      <input type="text" id="searchBar" placeholder="e.g. Goblin" style="width:100%;margin-bottom:1rem;" />
+
+      <!-- Core Genres -->
+      <details open>
+        <summary><strong>Core Genres</strong></summary>
+        <div id="genreFilters">
+          <!-- Filled programmatically for easy editing in script.js -->
+        </div>
+      </details>
+
+      <!-- Tropes & Subgenres -->
+      <details>
+        <summary><strong>Tropes & Sub-genres</strong></summary>
+        <div id="tropeFilters"></div>
+      </details>
+    </aside>
+
+    <!-- RESULTS GRID -->
+    <section id="dramaList"></section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+ Drama Wishlist

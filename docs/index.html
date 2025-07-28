@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DramaScope</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>DramaScope 🎬</h1>
+    <p>Discover, track, and share your favorite Asian dramas.</p>
+  </header>
+
+  <nav>
+    <label for="countryFilter">Filter by Country:</label>
+    <select id="countryFilter">
+      <option value="all">All</option>
+      <option value="korea">Korean</option>
+      <option value="china">Chinese</option>
+      <option value="thailand">Thai</option>
+      <option value="japan">Japanese</option>
+      <option value="philippines">Filipino</option>
+    </select>
+  </nav>
+
+  <main>
+    <section id="searchSection">
+      <input type="text" id="searchBar" placeholder="Search dramas by title or genre..." />
+      <button id="searchBtn">Search</button>
+    </section>
+
+   <section id="featured">
+  <h2>📌 Featured Dramas</h2>
+  <div class="carousel">
+    <button class="carousel-btn prev">&#10094;</button>
+    
+    <div class="carousel-track">
+      <div class="drama-card active">
+        <img src="assets/images/drama1.jpg" alt="Drama 1 Poster" />
+        <div class="drama-info">
+          <h3>Extraordinary You</h3>
+          <p>Country: Korea | Genre: Fantasy, Romance</p>
+        </div>
+      </div>
+
+      <div class="drama-card">
+        <img src="assets/images/drama2.jpg" alt="Drama 2 Poster" />
+        <div class="drama-info">
+          <h3>Eternal Love</h3>
+          <p>Country: China | Genre: Fantasy, Historical</p>
+        </div>
+      </div>
+
+      <div class="drama-card">
+        <img src="assets/images/drama3.jpg" alt="Drama 3 Poster" />
+        <div class="drama-info">
+          <h3>Bad Genius</h3>
+          <p>Country: Thailand | Genre: Thriller, Drama</p>
+        </div>
+      </div>
+    </div>
+
+    <button class="carousel-btn next">&#10095;</button>
+  </div>
+</section>
+
+
+    <section id="watchlist">
+      <h2>📺 Your Watchlist</h2>
+      <ul id="watchlistItems">
+        <!-- JavaScript will populate this -->
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Built with ❤️ by Waithera Mbucho | © 2025 DramaScope</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
