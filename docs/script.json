@@ -1,6 +1,4 @@
-/DATA/
-// Minimal sample list—add as many dramas as you want!
-const dramas = [
+[]
   {
     title: "Mr. Queen",
     year: 2020,
@@ -32,8 +30,15 @@ const dramas = [
     poster: "https://i.imgur.com/0PByy12.jpg",
     genres: ["Romance", "Modern Slice of Life"],
     tropes: ["Boys’ Love (BL)", "School / Campus Drama", "Love After Betrayal"]
+  },
+  {
+    title: "Crash Landing on You",
+    year: 2019,
+    country: "Korea",
+    poster: "https://i.imgur.com/3e1k5bH.jpg",
+    genres: ["Romance", "Comedy / Romantic Comedy (Rom-Com)", "Modern Slice of Life"],
+    tropes: ["Noona Romance", "Secret Identity", "Love After Betrayal"]
   }
-];
 
 /* ---------- FILTER DEFINITIONS ---------- */
 const coreGenres = [
@@ -135,4 +140,4 @@ function addToWatchlist(drama) {
     alert(`${drama.title} is already in your watchlist.`);
   }
 }
-
+]
