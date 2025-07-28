@@ -1,4 +1,5 @@
 []
+{
   {
     title: "Mr. Queen",
     year: 2020,
@@ -6,7 +7,7 @@
     poster: "https://i.imgur.com/QniGQ1N.jpg",
     genres: ["Romance", "Comedy / Romantic Comedy (Rom-Com)", "Historical / Period Drama (Sageuk in Korean)"],
     tropes: ["Body Swapping", "Strong Female Lead"]
-  },
+ },
   {
     title: "Extraordinary Attorney Woo",
     year: 2022,
@@ -140,4 +141,5 @@ function addToWatchlist(drama) {
     alert(`${drama.title} is already in your watchlist.`);
   }
 }
-]
+}
+
