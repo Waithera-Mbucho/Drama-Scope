@@ -42,8 +42,8 @@
       <input type="text" id="searchBar" placeholder="e.g. Goblin" style="width:100%;margin-bottom:1rem;" />
 
       <!-- Core Genres -->
-      <details open>
-        <label for="genreDropdown"><strong>Core Genres</strong></label>
+      <Genres open>
+        <label for="genreDropdown"><strong> Genres</strong></label>
         <select id="genreDropdown">
           option value="">-- All Genres --</option>
           <option value="Romance">Romance</option>
@@ -88,24 +88,128 @@
          </div>
         </details>
 
-   <!-- RESULTS GRID -->
-  <section id="dramaList"></section>
-
+  <!-- RESULTS GRID -->
+  <section id="dramaList"></section> 
   <script>
-    // Load dramas from JSON and populate filters
-    fetch('asset.json')
+  document.addEventListener("DOMContentLoaded", () => {
+    const searchBar       = document.getElementById("searchBar");
+    const genreFiltersDiv = document.getElementById("genreFilters");
+    const tropeFiltersDiv = document.getElementById("tropeFilters");
+    const dramaListDiv    = document.getElementById("dramaList");
+    const filtersDiv      = document.getElementById("filters");
+
+    const coreGenres = [
+      "Romance",
+      "Comedy / Romantic Comedy (Rom-Com)",
+      "Melodrama",
+      "Fantasy",
+      "Historical / Period Drama (Sageuk in Korean)",
+      "Modern Slice of Life",
+      "Action / Thriller / Suspense",
+      "Mystery / Crime",
+      "Supernatural",
+      "Horror / Psychological"
+    ];
+
+    const tropes = [
+      "Revenge / Vendetta",
+      "Tragic Love",
+      "Love Triangle",
+      "Secret Identity",
+      "Love After Betrayal",
+      "Reincarnation / Past Lives",
+      "Time Travel",
+      "Parallel Universes",
+      "Immortals / Mythical Beings",
+      "Body Swapping",
+      "Strong Female Lead",
+      "Cold Male Lead / Tsundere",
+      "Chaebol / CEO Romance",
+      "Poor Girl x Rich Guy",
+      "Boys’ Love (BL)",
+      "School / Campus Drama",
+      "Office Romance",
+      "Celebrity & Idol Industry",
+      "Contract Marriage / Fake Relationship",
+      "Noona Romance (Older Woman / Younger Man)",
+      "Palace Politics",
+      "Medical / Legal Dramas"
+    ];
+
+    function createCheckbox(name, group) {
+      const id = `${group}-${name}`.replace(/\s+/g, "-");
+      return `
+        <label style="display:block; font-size:0.9rem;">
+          <input type="checkbox" value="${name}" data-group="${group}" id="${id}" />
+          ${name}
+        </label>`;
+    }
+
+    let dramas = [];
+
+    function initUI() {
+      genreFiltersDiv.innerHTML = coreGenres
+        .map(g => createCheckbox(g, "genre")).join("");
+      tropeFiltersDiv.innerHTML = tropes
+        .map(t => createCheckbox(t, "trope")).join("");
+      renderList(dramas);
+      attachEventListeners();
+    }
+
+    function renderList(list) {
+      if (!list.length) {
+        dramaListDiv.innerHTML = "<p>No dramas match your filters 🤷‍♀️</p>";
+        return;
+      }
+      dramaListDiv.innerHTML = list.map(d => `
+        <div class="drama-card">
+          <img src="${d.poster}" alt="${d.title} poster" loading="lazy">
+          <h3>${d.title}</h3>
+          <p>${d.year} • ${d.country}</p>
+          <div style="margin:.25rem .5rem;">
+            ${d.genres.map(g => `<span class="badge">${g}</span>`).join("")}
+            ${d.tropes.map(t => `<span class="badge">${t}</span>`).join("")}
+          </div>
+        </div>
+      `).join("");
+    }
+
+    function filterDramas() {
+      const term = searchBar.value.trim().toLowerCase();
+      const selectedGenres = Array.from(
+        document.querySelectorAll('input[data-group="genre"]:checked')
+      ).map(cb => cb.value);
+      const selectedTropes = Array.from(
+        document.querySelectorAll('input[data-group="trope"]:checked')
+      ).map(cb => cb.value);
+
+      const filtered = dramas.filter(d => {
+        const matchesSearch = d.title.toLowerCase().includes(term);
+        const matchesGenres = selectedGenres.every(g => d.genres.includes(g));
+        const matchesTropes = selectedTropes.every(t => d.tropes.includes(t));
+        return matchesSearch && matchesGenres && matchesTropes;
+      });
+
+      renderList(filtered);
+    }
+
+    function attachEventListeners() {
+      searchBar.addEventListener("input", filterDramas);
+      filtersDiv.addEventListener("change", e => {
+        if (e.target.matches('input[type="checkbox"]')) filterDramas();
+      });
+    }
+
+    // load your data and kick off the UI
+    fetch("asset.json")
       .then(r => r.json())
       .then(data => {
-        window.dramas = data;          // for script.js to see
-        populateFilters(data);         // defined in script.js
-        displayDramas(data);           // defined in script.js
+        dramas = data;
+        initUI();
       })
-      .catch(err => console.error(err));
+      .catch(err => console.error("Error loading dramas:", err));
+  });
   </script>
-  <!-- <-- Notice the leading '<' here -->
-  <script src="script.js" defer></script>
-</main>
-
 </body>
 </html>
  Drama Wishlist
