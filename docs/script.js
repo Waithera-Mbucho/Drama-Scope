@@ -1,47 +1,29 @@
+let dramas = [];
 
-[
-  {
-    "title": "Mr. Queen",
-    "year": 2020,
-    "country": "Korea",
-    "poster": "https://i.imgur.com/QniGQ1N.jpg",
-    "genres": ["Romance", "Comedy / Romantic Comedy (Rom-Com)", "Historical / Period Drama (Sageuk in Korean)"],
-    "tropes": ["Body Swapping", "Strong Female Lead"]
-  },
-  {
-    "title": "Extraordinary Attorney Woo",
-    "year": 2022,
-    "country": "Korea",
-    "poster": "https://i.imgur.com/3ete6mv.jpg",
-    "genres": ["Modern Slice of Life", "Comedy / Romantic Comedy (Rom-Com)"],
-    "tropes": ["Strong Female Lead", "Office Romance"]
-  },
-  {
-    "title": "The Untamed",
-    "year": 2019,
-    "country": "China",
-    "poster": "https://i.imgur.com/l2kqG8L.jpg",
-    "genres": ["Fantasy", "Historical / Period Drama (Sageuk in Korean)"],
-    "tropes": ["Boys’ Love (BL)", "Immortals / Mythical Beings", "Tragic Love"]
-  },
-  {
-    "title": "Bad Buddy",
-    "year": 2021,
-    "country": "Thailand",
-    "poster": "https://i.imgur.com/0PByy12.jpg",
-    "genres": ["Romance", "Modern Slice of Life"],
-    "tropes": ["Boys’ Love (BL)", "School / Campus Drama", "Love After Betrayal"]
-  },
-  {
-    "title": "Crash Landing on You",
-    "year": 2019,
-    "country": "Korea",
-    "poster": "https://i.imgur.com/3e1k5bH.jpg",
-    "genres": ["Romance", "Comedy / Romantic Comedy (Rom-Com)", "Modern Slice of Life"],
-    "tropes": ["Noona Romance", "Secret Identity", "Love After Betrayal"]
-  }
-]
+// 1) Load your JSON data
+fetch('../asset.json')
+  .then(res => {
+    if (!res.ok) throw new Error("Failed to load asset.json");
+    return res.json();
+  })
+  .then(data => {
+    dramas = data;            // now dramas is your array from asset.json
+    initFilters();            // build checkboxes & initial render
+  })
+  .catch(err => console.error(err));
 
+// 2) Move your UI init into a function
+function initFilters() {
+  genreFiltersDiv.innerHTML = coreGenres.map(g => createCheckbox(g, "genre")).join("");
+  tropeFiltersDiv.innerHTML = tropes.map(t => createCheckbox(t, "trope")).join("");
+
+  renderList(dramas);        // show everything at first load
+  attachEventListeners();    // wire up search + filter events
+}
+
+// … your existing renderList, filterDramas, attachEventListeners, etc. …
+
+/* ---------- CONSTANTS ---------- */
 {
 "coreGenres" = [
   "Romance", "Comedy / Romantic Comedy (Rom-Com)", "Melodrama", "Fantasy",
