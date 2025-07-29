@@ -5,7 +5,9 @@
     "country": "South Korea",
     "poster": "assets/posters/tvmaze/queen-of-tears.jpg",
     "genres": ["Romantic Comedy"],
-    "description": "Queen of Tears follows married couple Hong Hae-in and Baek Hyun-woo as they face a crisis when Hae-in is diagnosed with brain cancer, forcing them to confront their relationship and past mistakes." 
+    "description": "Queen of Tears follows married couple Hong Hae-in and Baek Hyun-woo as they face a crisis when Hae-in is diagnosed with brain cancer, forcing them to confront their relationship and past mistakes." ,
+    "tropes":  ["Tragic Love", "Strong Female Lead"]
+  
   },
   {
     "title": "Crash Landing on You",
@@ -13,7 +15,9 @@
     "country": "South Korea",
     "poster": "assets/posters/tvmaze/crash-landing-on-you.jpg",
     "genres": ["Romantic Comedy", "Drama"],
-    "description": "Heiress Yoon Se-ri accidentally paraglides into North Korea, where officer Ri Jung-hyuk hides and protects her—sparking an unlikely, cross-border romance amid political tensions." 
+    "description": "Heiress Yoon Se-ri accidentally paraglides into North Korea, where officer Ri Jung-hyuk hides and protects her—sparking an unlikely, cross-border romance amid political tensions." ,
+    "tropes": ["Cold Male Lead / Tsundere", "Tragic Love"]
+
   },
   {
     "title": "Answer Me 1988",
@@ -21,7 +25,9 @@
     "country": "South Korea",
     "poster": "assets/posters/tvmaze/answer-me-1988.jpg",
     "genres": ["Family Drama", "Comedy", "Romance"],
-    "description": "Set in Ssangmun-dong in 1988, five friends and their families navigate first loves, friendships and the bonds that tie their households together." 
+    "description": "Set in Ssangmun-dong in 1988, five friends and their families navigate first loves, friendships and the bonds that tie their households together." ,
+    "tropes": ["School / Campus Drama", "Love Triangle"]
+    
   },
   {
     "title": "Guardian: The Lonely and Great God (Goblin)",
@@ -29,15 +35,18 @@
     "country": "South Korea",
     "poster": "assets/posters/tvmaze/goblin.jpg",
     "genres": ["Fantasy", "Romance", "Drama", "Comedy"],
-    "description": "Kim Shin is a cursed immortal (‘goblin’) who needs a human bride to end his life; Ji Eun-tak, a girl who can see spirits, may be the one to break his curse." 
+    "description": "Kim Shin is a cursed immortal (‘goblin’) who needs a human bride to end his life; Ji Eun-tak, a girl who can see spirits, may be the one to break his curse." ,
+    "tropes": ["Immortals / Mythical Beings", "Tragic Love"]
   },
+  
   {
     "title": "Mr. Sunshine",
     "year": "2018",
     "country": "South Korea",
     "poster": "assets/posters/tvmaze/mr-sunshine.jpg",
     "genres": ["Historical", "Romance", "Melodrama"],
-    "description": "An American soldier returns to Joseon-era Korea and falls for an aristocrat’s daughter, entwining their fates amid the fight for independence." 
+    "description": "An American soldier returns to Joseon-era Korea and falls for an aristocrat’s daughter, entwining their fates amid the fight for independence." ,
+    "tropes": ["Tragic Love", "Palace Politics"] 
   },
 
   {
@@ -46,7 +55,8 @@
     "country": "China",
     "poster": "assets/posters/tvmaze/nirvana-in-fire.jpg",
     "genres": ["Wuxia", "Historical", "Political Thriller"],
-    "description": "Under the alias Mei Changsu, Lin Shu enters the capital to clear his family’s name and seek justice for a conspiracy that branded them traitors years earlier." 
+    "description": "Under the alias Mei Changsu, Lin Shu enters the capital to clear his family’s name and seek justice for a conspiracy that branded them traitors years earlier." ,
+    "tropes": ["Revenge / Vendetta", "Palace Politics"]
   },
   {
     "title": "Story of Yanxi Palace",
@@ -54,7 +64,8 @@
     "country": "China",
     "poster": "assets/posters/tvmaze/story-of-yanxi-palace.jpg",
     "genres": ["Historical Fiction", "Drama"],
-    "description": "Palace maid Wei Yingluo navigates court intrigues during the Qianlong Emperor’s reign, using wit and resilience to rise through the ranks." 
+    "description": "Palace maid Wei Yingluo navigates court intrigues during the Qianlong Emperor’s reign, using wit and resilience to rise through the ranks." ,
+    "tropes": ["Palace Politics", "Strong Female Lead"]
   },
   {
     "title": "Eternal Love (Three Lives, Three Worlds)",
@@ -62,7 +73,8 @@
     "country": "China",
     "poster": "assets/posters/tvmaze/eternal-love.jpg",
     "genres": ["Fantasy", "Romance"],
-    "description": "Deity Bai Qian and god Ye Hua share a love that spans three lifetimes, overcoming celestial rivalries and fate to be together." 
+    "description": "Deity Bai Qian and god Ye Hua share a love that spans three lifetimes, overcoming celestial rivalries and fate to be together." ,
+    "tropes": ["Reincarnation / Past Lives", "Tragic Love"]
   },
   {
     "title": "Moonshine and Valentine",
@@ -70,7 +82,9 @@
     "country": "China",
     "poster": "assets/posters/tvmaze/moonshine-and-valentine.jpg",
     "genres": ["Fantasy", "Romance"],
-    "description": "Guan Pipi—a mortal woman—falls in love with Helan Jingting, a fox spirit bound by a millennium-old curse, as they search for a cure and each other." 
+    "description": "Guan Pipi—a mortal woman—falls in love with Helan Jingting, a fox spirit bound by a millennium-old curse, as they search for a cure and each other.",
+    "tropes": ["Immortals / Mythical Beings", "Tragic Love"]
+
   },
   {
     "title": "Ashes of Love",
@@ -78,7 +92,8 @@
     "country": "China",
     "poster": "assets/posters/tvmaze/ashes-of-love.jpg",
     "genres": ["Fantasy", "Romance"],
-    "description": "Flower sprite Jin Mi, given an elixir to never love, and fire immortal Xufeng share a tragic, immortal-spanning romance in the Heavenly Realm." 
+    "description": "Flower sprite Jin Mi, given an elixir to never love, and fire immortal Xufeng share a tragic, immortal-spanning romance in the Heavenly Realm.",
+    "tropes": ["Immortals / Mythical Beings", "Tragic Love"]
   },
 
   {
@@ -87,7 +102,8 @@
     "country": "Thailand",
     "poster": "assets/posters/tvmaze/bad-buddy.jpg",
     "genres": ["Romantic Comedy", "BL"],
-    "description": "Two boys from rival hardware-store families, Pat and Pran, grow up hating each other—until they discover unexpected feelings they can’t ignore." 
+    "description": "Two boys from rival hardware-store families, Pat and Pran, grow up hating each other—until they discover unexpected feelings they can’t ignore." ,
+    "tropes": ["Boys’ Love (BL)", "School / Campus Drama"]
   },
   {
     "title": "2gether: The Series",
@@ -95,7 +111,8 @@
     "country": "Thailand",
     "poster": "assets/posters/tvmaze/2gether-the-series.jpg",
     "genres": ["Romantic Comedy", "BL"],
-    "description": "College boys Tine and Sarawat enter a fake relationship that soon blossoms into real love, challenging their own and their friends’ expectations." 
+    "description": "College boys Tine and Sarawat enter a fake relationship that soon blossoms into real love, challenging their own and their friends’ expectations." ,
+    "tropes": ["Contract Marriage / Fake Relationship", "Boys’ Love (BL)"]
   },
   {
     "title": "SOTUS: The Series",
@@ -103,7 +120,8 @@
     "country": "Thailand",
     "poster": "assets/posters/tvmaze/sotus-the-series.jpg",
     "genres": ["Romantic Comedy", "Drama", "BL"],
-    "description": "Freshman Kongpob endures the SOTUS hazing system led by senior Arthit—only to find respect and something deeper blooming between them." 
+    "description": "Freshman Kongpob endures the SOTUS hazing system led by senior Arthit—only to find respect and something deeper blooming between them." ,
+    "tropes": ["School / Campus Drama", "Boys’ Love (BL)"]
   },
   {
     "title": "SOTUS S: The Series",
@@ -111,7 +129,8 @@
     "country": "Thailand",
     "poster": "assets/posters/tvmaze/sotus-s-the-series.jpg",
     "genres": ["Romantic Comedy", "Drama", "BL"],
-    "description": "Sequel to SOTUS, following Arthit and Kongpob as they face new challenges to their relationship and careers after graduation." 
+    "description": "Sequel to SOTUS, following Arthit and Kongpob as they face new challenges to their relationship and careers after graduation." ,
+    "tropes": ["School / Campus Drama", "Boys’ Love (BL)"]
   },
   {
     "title": "F4 Thailand: Boys Over Flowers",
@@ -119,7 +138,8 @@
     "country": "Thailand",
     "poster": "assets/posters/tvmaze/f4-thailand-boys-over-flowers.jpg",
     "genres": ["Romance", "Drama", "Comedy"],
-    "description": "Gorya, a poor flower-shop girl, enters an elite school dominated by the F4 boys—sparked by mean pranks, she learns the meaning of friendship and love." 
+    "description": "Gorya, a poor flower-shop girl, enters an elite school dominated by the F4 boys—sparked by mean pranks, she learns the meaning of friendship and love." ,
+    "tropes": ["School / Campus Drama", "Poor Girl x Rich Guy"]
   },
 
   {
@@ -128,7 +148,8 @@
     "country": "Japan",
     "poster": "assets/posters/tvmaze/midnight-diner-tokyo-stories.jpg",
     "genres": ["Slice of Life", "Drama"],
-    "description": "A 12-seat diner opens from midnight to 7 AM; the Master cooks any dish his patrons request, each episode revealing heartfelt stories of Tokyo’s night-owls." 
+    "description": "A 12-seat diner opens from midnight to 7 AM; the Master cooks any dish his patrons request, each episode revealing heartfelt stories of Tokyo’s night-owls." ,
+    "tropes": ["Strong Female Lead", "Tragic Love"]
   },
   {
     "title": "An Incurable Case of Love",
@@ -136,7 +157,8 @@
     "country": "Japan",
     "poster": "assets/posters/tvmaze/an-incurable-case-of-love.jpg",
     "genres": ["Romance", "Drama"],
-    "description": "Rookie nurse Nanase Sakura reunites with Dr. Tendo—her childhood crush turned icy perfectionist—igniting a work-romance that melts the ‘Devil’ at the hospital." 
+    "description": "Rookie nurse Nanase Sakura reunites with Dr. Tendo—her childhood crush turned icy perfectionist—igniting a work-romance that melts the ‘Devil’ at the hospital." ,
+    "tropes": ["Medical / Legal Dramas", "Strong Female Lead"]
   },
   {
     "title": "Terrace House: Boys × Girls Next Door",
@@ -144,7 +166,8 @@
     "country": "Japan",
     "poster": "assets/posters/tvmaze/terrace-house-boys-girls-next-door.jpg",
     "genres": ["Reality"],
-    "description": "Six strangers live together in a Tokyo house, cameras rolling 24/7 as they pursue dreams, friendships and romance—unscripted and unfiltered." 
+    "description": "Six strangers live together in a Tokyo house, cameras rolling 24/7 as they pursue dreams, friendships and romance—unscripted and unfiltered." ,
+    "tropes": ["Celebrity & Idol Industry", "Love Triangle"]
   },
   {
     "title": "Terrace House: Boys & Girls in the City",
@@ -152,7 +175,8 @@
     "country": "Japan",
     "poster": "assets/posters/tvmaze/terrace-house-boys-girls-in-the-city.jpg",
     "genres": ["Reality"],
-    "description": "A new cast of six young adults share a modern Tokyo home, forging connections and conflicts under constant observation—and no script." 
+    "description": "A new cast of six young adults share a modern Tokyo home, forging connections and conflicts under constant observation—and no script." ,
+    "tropes": ["Celebrity & Idol Industry", "Love Triangle"]
   },
   {
     "title": "Mada Mada Koi wa Tsuzuku yo Doko Made mo",
@@ -160,6 +184,7 @@
     "country": "Japan",
     "poster": "assets/posters/tvmaze/mada-mada-koi-wa-tsuzuku-yo-doko-made-mo.jpg",
     "genres": ["Romantic Comedy"],
-    "description": "Spin-off special where nurse Nanase and colleagues wind down at a bar run by a handsome fortune-telling waiter—sharing laughs, tears and love advice." 
+    "description": "Spin-off special where nurse Nanase and colleagues wind down at a bar run by a handsome fortune-telling waiter—sharing laughs, tears and love advice." ,
+     "tropes": ["Office Romance", "Tragic Love"]
   }
 ]

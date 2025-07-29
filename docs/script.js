@@ -41,87 +41,89 @@ const tropes = [
   "Noona Romance (Older Woman / Younger Man)", "Palace Politics", "Medical / Legal Dramas"
 ];
 
-/* ---------- DOM REFERENCES ---------- */
-const genreFiltersDiv = document.getElementById("genreFilters");
-const tropeFiltersDiv = document.getElementById("tropeFilters");
-const searchBar = document.getElementById("searchBar");
-const dramaListDiv = document.getElementById("dramaList");
+// Wrap everything so it only runs once the page is ready//
+document.addEventListener("DOMContentLoaded", () => {
+  // 1) DOM references – make sure these IDs exist in your drama.html
+  const searchBar       = document.getElementById("searchBar");
+  const genreFiltersDiv = document.getElementById("genreFilters");
+  const tropeFiltersDiv = document.getElementById("tropeFilters");
+  const dramaListDiv    = document.getElementById("dramaList");
 
-/* ---------- HELPERS ---------- */
-function createCheckbox(name, group) {
-  const id = `${group}-${name}`.replace(/\s+/g, "-");
-  return `
-    <label style="display:block;">
+  // 2) Your filter options
+  const coreGenres = [ /* …same list you used before… */ ];
+  const tropes     = [ /* …same list… */ ];
+
+  // 3) Helper to create checkbox HTML
+  function createCheckbox(name, group) {
+    const id = `${group}-${name}`.replace(/\s+/g, "-");
+    return `<label style="display:block;">
       <input type="checkbox" value="${name}" data-group="${group}" id="${id}" />
       ${name}
     </label>`;
-}
-/* ---------- UI INITIALISATION ---------- */
-genreFiltersDiv.innerHTML = coreGenres.map(g => createCheckbox(g, "genre")).join("");
-tropeFiltersDiv.innerHTML = tropes.map(t => createCheckbox(t, "trope")).join("");
-
-renderList(dramas);                  // show everything at first load
-attachEventListeners();              // start listening for changes
-
-/* ---------- MAIN RENDER + FILTER LOGIC ---------- */
-function renderList(list) {
-  if (!list.length) {
-    dramaListDiv.innerHTML = "<p>No dramas match your filters 🤷‍♀️</p>";
-    return;
   }
 
-  dramaListDiv.innerHTML = list.map(d => `
-    <div class="drama-card">
-      <img src="${d.poster}" alt="${d.title} poster">
-      <h3>${d.title}</h3>
-      <p>${d.year} • ${d.country}</p>
-      ${d.genres.map(g => `<span class="badge">${g}</span>`).join("")}
-      ${d.tropes.slice(0,3).map(t => `<span class="badge">${t}</span>`).join("")}
-    </div>
-  `).join("");
-}
+  // 4) Our data array – starts empty until fetch completes
+  let dramas = [];
 
-function filterDramas() {
-  const searchTerm = searchBar.value.trim().toLowerCase();
+  // 5) Fetch your JSON file (adjust the path if script.js lives in docs/script/)
+  fetch("../asset.json")
+    .then(res => {
+      console.log("asset.json status:", res.status);
+      return res.json();
+    })
+    .then(data => {
+      dramas = data;
+      console.log("Loaded dramas:", dramas);
+      initUI();               // build filters & initial render
+    })
+    .catch(err => console.error("Failed to load dramas:", err));
 
-  // collect selected genres & tropes
-  const selectedGenres = [...document.querySelectorAll('input[data-group="genre"]:checked')].map(cb => cb.value);
-  const selectedTropes = [...document.querySelectorAll('input[data-group="trope"]:checked')].map(cb => cb.value);
-
-  const filtered = dramas.filter(d => {
-    // title search
-    const matchesSearch = d.title.toLowerCase().includes(searchTerm);
-
-    // genre filter: every selected genre must appear in drama.genres
-    const matchesGenres = selectedGenres.every(g => d.genres.includes(g));
-
-    // trope filter: every selected trope must appear in drama.tropes
-    const matchesTropes = selectedTropes.every(t => d.tropes.includes(t));
-
-    return matchesSearch && matchesGenres && matchesTropes;
-  });
-
-  renderList(filtered);
-}
-
-function attachEventListeners() {
-  // search
-  searchBar.addEventListener("input", filterDramas);
-
-  // checkboxes (delegated)
-  document.getElementById("filters").addEventListener("change", e => {
-    if (e.target.matches('input[type="checkbox"]')) filterDramas();
-  });
-}
-function addToWatchlist(drama) {
-  const current = JSON.parse(localStorage.getItem('dramascope_watchlist')) || [];
-  if (!current.some(d => d.title === drama.title)) {
-    current.push(drama);
-    localStorage.setItem('dramascope_watchlist', JSON.stringify(current));
-    alert(` ${drama.title} added to your watchlist!`);
-  } else {
-    alert(`${drama.title} is already in your watchlist.`);
+  // 6) Build filter checkboxes, render full list, attach events
+  function initUI() {
+    genreFiltersDiv .innerHTML = coreGenres.map(g => createCheckbox(g, "genre")).join("");
+    tropeFiltersDiv .innerHTML = tropes    .map(t => createCheckbox(t, "trope")).join("");
+    renderList(dramas);
+    attachEventListeners();
   }
-}
 
+  // 7) Render a list of drama objects as cards
+  function renderList(list) {
+    if (!list.length) {
+      dramaListDiv.innerHTML = "<p>No dramas match your filters.</p>";
+      return;
+    }
+    dramaListDiv.innerHTML = list.map(d => `
+      <div class="drama-card">
+        <img src="${d.poster}" alt="${d.title} poster" loading="lazy">
+        <h3>${d.title}</h3>
+        <p>${d.year} • ${d.country}</p>
+        ${d.genres.map(g => `<span class="badge genre">${g}</span>`).join("")}
+        ${d.tropes.map(t => `<span class="badge trope">${t}</span>`).join("")}
+      </div>
+    `).join("");
+  }
 
+  // 8) Filter logic: title search + genre & trope AND‑filter
+  function filterDramas() {
+    const term = searchBar.value.trim().toLowerCase();
+    const selectedGenres = [...document.querySelectorAll('input[data-group="genre"]:checked')].map(cb => cb.value);
+    const selectedTropes = [...document.querySelectorAll('input[data-group="trope"]:checked')].map(cb => cb.value);
+
+    const filtered = dramas.filter(d => {
+      const matchesSearch = d.title.toLowerCase().includes(term);
+      const matchesGenres = selectedGenres.every(g => d.genres.includes(g));
+      const matchesTropes = selectedTropes.every(t => d.tropes.includes(t));
+      return matchesSearch && matchesGenres && matchesTropes;
+    });
+
+    renderList(filtered);
+  }
+
+  // 9) Hook up the live search + checkbox changes
+  function attachEventListeners() {
+    searchBar.addEventListener("input", filterDramas);
+    document.getElementById("filters").addEventListener("change", e => {
+      if (e.target.matches('input[type="checkbox"]')) filterDramas();
+    });
+  }
+});

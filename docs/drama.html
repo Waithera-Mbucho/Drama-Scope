@@ -32,6 +32,7 @@
   </header>
 
   <main>
+    <script src="script.js"></script>
     <!-- FILTERS PANEL -->
     <aside id="filters">
       <h2>Filters</h2>
@@ -44,7 +45,7 @@
       <details open>
         <summary><strong>Core Genres</strong></summary>
         <div id="genreFilters">
-          
+
           <!-- Filled programmatically for easy editing in script.js -->
         </div>
       </details>
@@ -58,9 +59,18 @@
 
     <!-- RESULTS GRID -->
     <section id="dramaList"></section>
+    <script>
+      // Load dramas from JSON and populate filters
+      fetch('asset.json')
+        .then(response => response.json())
+        .then(data => {
+          window.dramas = data; // Store globally for script.js
+          populateFilters(data);
+          displayDramas(data);
+        })
+        .catch(error => console.error('Error loading dramas:', error));
+      </script>
   </main>
-
-  <script src="script.js"></script>
 </body>
 </html>
  Drama Wishlist
