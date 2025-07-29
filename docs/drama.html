@@ -97,7 +97,17 @@
     const tropeFiltersDiv = document.getElementById("tropeFilters");
     const dramaListDiv    = document.getElementById("dramaList");
     const filtersDiv      = document.getElementById("filters");
-
+fetch("asset.json")
+  .then(res => {
+    if (!res.ok) throw new Error("Network response was not ok");
+    return res.json();
+  })
+  .then(data => {
+    // use your JSON data here
+    window.dramas = data;
+    initUI();
+  })
+  .catch(err => console.error("Error loading asset.json:", err));
     const coreGenres = [
       "Romance",
       "Comedy / Romantic Comedy (Rom-Com)",
