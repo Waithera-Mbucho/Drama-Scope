@@ -1,13 +1,13 @@
-[]
+
 {
-  {
     title: "Mr. Queen",
     year: 2020,
     country: "Korea",
     poster: "https://i.imgur.com/QniGQ1N.jpg",
     genres: ["Romance", "Comedy / Romantic Comedy (Rom-Com)", "Historical / Period Drama (Sageuk in Korean)"],
     tropes: ["Body Swapping", "Strong Female Lead"]
- },
+  },
+  
   {
     title: "Extraordinary Attorney Woo",
     year: 2022,
@@ -40,7 +40,7 @@
     genres: ["Romance", "Comedy / Romantic Comedy (Rom-Com)", "Modern Slice of Life"],
     tropes: ["Noona Romance", "Secret Identity", "Love After Betrayal"]
   }
-
+]
 /* ---------- FILTER DEFINITIONS ---------- */
 const coreGenres = [
   "Romance", "Comedy / Romantic Comedy (Rom-Com)", "Melodrama", "Fantasy",
@@ -141,5 +141,5 @@ function addToWatchlist(drama) {
     alert(`${drama.title} is already in your watchlist.`);
   }
 }
-}
+
 
