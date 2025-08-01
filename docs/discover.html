@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DramaScope - Discover</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&family=Roboto:wght@400;700&family=Lemon&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ <header class="banner">
+    <h1 class="page-title">DISCOVER DRAMA’S</h1>
+ </header>
+
+  <section class="filter-panel" id="filters">
+    <button class="filter-btn active" id="allBtn">All Dramas</button>
+    <input type="text" id="searchBar" class="filter-input" placeholder="Search Title">
+    <select id="genreFilter" class="filter-select"></select>
+    <select id="tropeFilter" class="filter-select"></select>
+  </section>
+
+  <section id="dramaList" class="discover-grid"></section>
+
+  <footer>
+    <p class="footer-text">By Waithera Mbucho</p>
+  </footer>
+
+ <script src="script.js"></script>
+</body>
+</html>

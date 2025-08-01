@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const carouselTrack = document.getElementById('allCarouselTrack');
   let dramas = [];
 
-   fetch('asset.json')
+   const assetPath = location.pathname.startsWith('/docs/') ? 'asset.json' : 'docs/asset.json';
+  fetch(assetPath)
     .then(res => res.json())
     .then(data => {
       dramas = data;

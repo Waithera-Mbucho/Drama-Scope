@@ -1,74 +1,142 @@
 docs/style.css
+ Base Reset + Global
+  {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Poppins', 'Nunito', sans-serif;
+ }
+-body {
+  background-color: #ffeef1;
 body {
-  background-color: #fffeb6;
-   color: #3a2c2c;
+ background-color: #fffbe6;
+   color: #bdebf3;
    line-height: 1.7;
    font-size: 1rem;
    padding: 2rem;
  }
- 
- html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
 }
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  font-family: 'Roboto', sans-serif;
-  background-color: #fffeb6;
+ 
+ Layout Containers
+ container {
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 2rem;
+   background-color: #fff8f8;
+   border-radius: 20px;
+   box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+ }
+ 
+ Header
+ header {
+   text-align: center;
+   margin-bottom: 2rem;
+ }
+ 
+ header h1 {
+   font-size: 3rem;
+   color: #d88f9a;
+
+   header p {
+   border-radius: 30px;
+   cursor: pointer;
+   transition: all 0.3s;
+   font-size: 1rem;
+ }
+}
+ #searchBtn:hover {
+   background-color: #f7b7d3;
+   color: #FFB7CE;
+ }
+ 
+ Carousel to Column Desktop
+ carousel {
+   margin: 3rem auto;
+   max-width: 1000px;
+   overflow: hidden;
+ }
+ 
+ carousel-track {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 2rem;
+ }
+ 
+ drama-card {
+   position: relative;
+   background-color: #fff;
+   border-radius: 20px;
+   padding: 1.5rem;
+   text-align: center;
+   box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+ }
+ 
+ drama-card img {
+   width: 100%;
+   height: 280px;
+   object-fit: cover;
+   border-radius: 15px;
+   margin-bottom: 0.75rem;
+ }
+ 
+ drama-info h3 {
+   font-size: 1.3rem;
+   margin-bottom: 0.3rem;
+   color: #FFB7CE;
+}
+
+ 
+like-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: #eec8e0;
+  border: none;
+  color: #3a2c2c;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+like-btn.liked {
+  background-color: #ee556c;
   color: #fff;
 }
-.hero {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+ drama-info p {
+   font-size: 0.95rem;
+   color: #6e4f50;
+ }
+ /* Discover page styles */
+header.banner {
+  background-image: url('images/discoverpage.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 4rem 2rem;
   text-align: center;
-  padding: 2rem;
 }
-.logo {
-  font-family: 'Rubik Moonrocks', cursive;
-  font-size: 128pt;
-  letter-spacing: 0.035em;
-  color: #F6E179;
-  text-shadow: 4px 4px 0 #000000;
-  -webkit-text-stroke: 1px #F7BAF2;
-  margin: 0;
+ /* Carousel Buttons (optional if JS is added) */
+ carousel-btn {
+   font-size: 2rem;
+   background: none;
+   border: none;
+   color: #f7b7d3;
+   cursor: pointer;
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+ }
+ 
+ drama-card:hover .card-overlay,
+.drama-card:focus-within .card-overlay {
+  opacity: 1;
 }
-.subtitle {
-  font-family: 'Roboto', sans-serif;
-  font-size: 32pt;
-  color: #81D3FB;
-  -webkit-text-stroke: 1px #81D3FB;
-  margin: 0 0 2rem;
-}
-nav {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.btn {
-  font-family: 'Lemon', cursive;
-  font-size: 32pt;
-  color: #FFFFFF;
-  background-color: #EAA8C0;
-  padding: 1rem 2rem;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background-color 0.3s;
-}
-.btn:hover {
-  background-color: #d797b2;
-}
-footer {
-  text-align: center;
-  padding: 1rem;
-}
-@media (max-width: 768px) {
-  .logo { font-size: 64pt; }
-  .subtitle { font-size: 24pt; }
-  .btn { font-size: 24pt; }
-}
+ carousel-btn.prev { left: 20px; }
+ carousel-btn.next { right: 20px; }
+ 
+ Watchlist Section
+ #watchlist {
+   max-width: 1000px;
+   margin: 3rem auto;
+ }
+ 

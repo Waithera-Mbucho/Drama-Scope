@@ -266,5 +266,20 @@
     "cast": ["Lee Joon Gi", "IU"],
     "description": "Modern woman Hae Soo is transported to the Goryeo Dynasty, where palace intrigue and a love triangle among royal princes await her.",
     "tropes": ["Time Travel", "Reincarnation / Past Lives", "Love Triangle", "Tragic Love"]
+  },
+
+  {
+    "title" : "Reborn Rich",
+    "native titile": "재벌집 막내아들",
+    "year": "2022",
+    "country": "Korea",
+    "poster": "images/rebornrich.jpg",
+    "genres": ["Fantasy", "Drama", "Thriller"],
+    "director": "Jang Tae Yoo",
+    "writer": "Kim Tae Hee",
+    "cast": ["Song Joong Ki", "Lee Sung Min"],
+    "description": "After being betrayed and killed by his boss, a loyal employee is reborn as the youngest son of the wealthy Jin family, seeking revenge and control over the conglomerate.",
+    "tropes": ["Reincarnation / Past Lives", "Revenge / Vengence ", "Family Drama"]
   }
-]
+  ]
+

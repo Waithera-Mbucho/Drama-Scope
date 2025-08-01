@@ -14,20 +14,21 @@
     #dramaList { flex:3 1 400px; display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:1rem; }
   
     #carouselSection { flex:0 0 100%; }
-    .discover-carousel {
+   #carouselSection { flex:0 0 100%; }
+    .featured-carousel {
       overflow-x: auto;
       overflow-y: hidden;
       padding: 1rem 0;
       scrollbar-width: none;
     }
-    .discover-carousel::-webkit-scrollbar { display: none; }
-    .discover-carousel .carousel-track {
+    .featured-carousel::-webkit-scrollbar { display: none; }
+    .featured-carousel .carousel-track {
       display: flex;
       flex-wrap: nowrap;
       gap: 1rem;
       scroll-snap-type: x mandatory;
     }
-    .discover-carousel .carousel-item {
+    .featured-carousel .carousel-item {
       flex: 0 0 auto;
       position: relative;
       scroll-snap-align: start;
@@ -35,13 +36,13 @@
       overflow: hidden;
       background: #fff;
     }
-    .discover-carousel .carousel-item img {
+    .featured-carousel .carousel-item img {
       display: block;
       width: 200px;
       height: 300px;
       object-fit: cover;
     }
-    .discover-carousel .carousel-overlay {
+    .featured-carousel .carousel-overlay {
       position: absolute;
       bottom: 0;
       left: 0;
@@ -53,8 +54,8 @@
       opacity: 0;
       transition: opacity 0.25s;
     }
-    .discover-carousel .carousel-item:hover .carousel-overlay,
-    .discover-carousel .carousel-item:focus-within .carousel-overlay {
+    .featured-carousel .carousel-item:hover .carousel-overlay,
+    .featured-carousel .carousel-item:focus-within .carousel-overlay {
       opacity: 1;
     }
     .drama-card { border:1px solid #ddd; border-radius:8px; overflow:hidden; }
@@ -79,10 +80,11 @@
    
    <section id="carouselSection">
       <h2>All Dramas</h2>
-      <div class="discover-carousel">
+      <div class="featured-carousel">
         <div class="carousel-track" id="allCarouselTrack"></div>
       </div>
     </section>
+
 
     <aside id="filters">
       <h2>Filters</h2>
@@ -139,7 +141,8 @@
          </div>
       </details>
     </aside>
-   <section id="dramaList"></section>
+   
+  <script src="script.js"></script>
   </main>
   
 </body>
