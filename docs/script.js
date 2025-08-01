@@ -41,7 +41,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const selectedTropes = [...document.querySelectorAll('input[data-group="trope"]:checked')].map(cb => cb.value);
 
     const filtered = dramas.filter(d => {
-      const matchesSearch = d.title.toLowerCase().includes(term);
+      const matchesSearch =
+        d.title.toLowerCase().includes(term) ||
+        d.genres.some(g => g.toLowerCase().includes(term));
       const matchesGenre = !selectedGenre || d.genres.includes(selectedGenre);
       const matchesTropes = selectedTropes.every(t => d.tropes.includes(t));
       return matchesSearch && matchesGenre && matchesTropes;
