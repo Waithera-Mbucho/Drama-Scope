@@ -1,4 +1,5 @@
- {
+  [
+  {
     "title": "Queen of Tears",
     "year": "2024",
     "country": "South Korea",
@@ -6,8 +7,8 @@
     "genres": ["Romantic Comedy"],
     "description": "Queen of Tears follows married couple Hong Hae-in and Baek Hyun-woo as they face a crisis when Hae-in is diagnosed with brain cancer, forcing them to confront their relationship and past mistakes." ,
     "tropes":  ["Tragic Love", "Strong Female Lead"]
+   },
   
- },
   {
     "title": "Crash Landing on You",
     "year": "2019–2020",
@@ -16,7 +17,6 @@
     "genres": ["Romantic Comedy", "Drama"],
     "description": "Heiress Yoon Se-ri accidentally paraglides into North Korea, where officer Ri Jung-hyuk hides and protects her—sparking an unlikely, cross-border romance amid political tensions." ,
     "tropes": ["Cold Male Lead / Tsundere", "Tragic Love"]
-
   },
   {
     "title": "Reply 1988",
@@ -187,4 +187,4 @@
     "description": "Modern woman Hae Soo is transported to the Goryeo Dynasty, where palace intrigue and a love triangle among royal princes await her.",
     "tropes": ["Time Travel", "Reincarnation / Past Lives", "Love Triangle", "Tragic Love"]
   }
-
+]

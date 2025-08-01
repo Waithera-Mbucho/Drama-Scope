@@ -1,4 +1,4 @@
-#<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -6,7 +6,7 @@
   <title>DramaScope – Discover Dramas</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Minimal styling so you can see it work without style.css */
+  
     body { font-family: system-ui, sans-serif; margin: 0; }
     header { background:#111; color:#fff; padding:1rem; text-align:center; }
     main { display:flex; flex-wrap:wrap; gap:1rem; padding:1rem; }
@@ -21,209 +21,70 @@
 <body>
   <header>
     <h1>DramaScope</h1>
-    <nav>
+   
        <nav>
       <a href="index.html">Home</a> |
       <a href="drama.html">Discover Dramas</a> |
       <a href="watchlist.html">My Watchlist</a>
     </nav>
-    <h1>DramaScope</h1>
-    <p>Filter by Genre, Trope & Search</p>
+   
   </header>
 
   <main>
-    <script src="script.js"></script>
-    <!-- FILTERS PANEL -->
+   
     <aside id="filters">
       <h2>Filters</h2>
 
-      <!-- Search -->
       <label for="searchBar"><strong>Search Title</strong></label>
       <input type="text" id="searchBar" placeholder="e.g. Goblin" style="width:100%;margin-bottom:1rem;" />
 
-      <!-- Core Genres -->
-      <Genres open>
-       <summary><strong>Core Genres</strong></summary>
-       <div id="genreFilters"></div> 
-        <label for="genreDropdown"><strong> Genres</strong></label>
-        <select id="genreDropdown">
-          option value="">-- All Genres --</option>
-          <option value="Romance">Romance</option>
-          <option value="Comedy / Romantic Comedy (Rom‑Com)">Comedy / Romantic Comedy (Rom‑Com)</option>
+      <details open>
+        <summary><strong>Genre</strong></summary>
+        <label for="genreDropdown" class="visually-hidden">Genre</label>
+        <select id="genreDropdown" style="width:100%;margin-bottom:1rem;">
+          <option value="">-- All Genres --</option>
+         <option value="Comedy / Romantic Comedy (Rom-Com)">Comedy / Romantic Comedy (Rom-Com)</option>
           <option value="Melodrama">Melodrama</option>
           <option value="Fantasy">Fantasy</option>
           <option value="Historical / Period Drama (Sageuk in Korean)">Historical / Period Drama (Sageuk in Korean)</option>
           <option value="Modern Slice of Life">Modern Slice of Life</option>
           <option value="Action / Thriller / Suspense">Action / Thriller / Suspense</option>
           <option value="Mystery / Crime">Mystery / Crime</option>
-         <option value="Supernatural">Supernatural</option>
+           <option value="Supernatural">Supernatural</option>
          <option value="Horror / Psychological">Horror / Psychological</option>
-      </select>
+        </select>
       </details>
 
-      <!-- Tropes & Subgenres -->
-        <details>
-        <summary><strong>Tropes </strong></summary>
-         <div id="tropeFilters">
-           <label><input type="checkbox" data-group="trope" value="Revenge / Vendetta"> Revenge / Vendetta</label>
-          <label><input type="checkbox" data-group="trope" value="Tragic Love"> Tragic Love</label>
+       <details>
+        <summary><strong>Tropes</strong></summary>
+        <div id="tropeFilters">
            <label><input type="checkbox" data-group="trope" value="Love Triangle"> Love Triangle</label>
-           <label><input type="checkbox" data-group="trope" value="Secret Identity"> Secret Identity</label>
-           <label><input type="checkbox" data-group="trope" value="Love After Betrayal"> Love After Betrayal</label>
-           <label><input type="checkbox" data-group="trope" value="Reincarnation / Past Lives"> Reincarnation / Past Lives</label>
-           <label><input type="checkbox" data-group="trope" value="Time Travel"> Time Travel</label>
-           <label><input type="checkbox" data-group="trope" value="Parallel Universes"> Parallel Universes</label>
-           <label><input type="checkbox" data-group="trope" value="Immortals / Mythical Beings"> Immortals / Mythical Beings</label>
-           <label><input type="checkbox" data-group="trope" value="Body Swapping"> Body Swapping</label>
-           <label><input type="checkbox" data-group="trope" value="Strong Female Lead"> Strong Female Lead</label>
-           <label><input type="checkbox" data-group="trope" value="Cold Male Lead / Tsundere"> Cold Male Lead / Tsundere</label>
-           <label><input type="checkbox" data-group="trope" value="Chaebol / CEO Romance"> Chaebol / CEO Romance</label>
-           <label><input type="checkbox" data-group="trope" value="Poor Girl x Rich Guy"> Poor Girl x Rich Guy</label>
-           <label><input type="checkbox" data-group="trope" value="Boys’ Love (BL)"> Boys’ Love (BL)</label>
-           <label><input type="checkbox" data-group="trope" value="School / Campus Drama"> School / Campus Drama</label>
-           <label><input type="checkbox" data-group="trope" value="Office Romance"> Office Romance</label>
-           <label><input type="checkbox" data-group="trope" value="Celebrity & Idol Industry"> Celebrity & Idol Industry</label>
-           <label><input type="checkbox" data-group="trope" value="Contract Marriage / Fake Relationship"> Contract Marriage / Fake Relationship</label>
-           <label><input type="checkbox" data-group="trope" value="Noona Romance (Older Woman / Younger Man)"> Noona Romance (Older Woman / Younger Man)</label>
-           <label><input type="checkbox" data-group="trope" value="Palace Politics"> Palace Politics</label>
-           <label><input type="checkbox" data-group="trope" value="Medical / Legal Dramas"> Medical / Legal Dramas</label>
+          <label><input type="checkbox" data-group="trope" value="Secret Identity"> Secret Identity</label>
+          <label><input type="checkbox" data-group="trope" value="Love After Betrayal"> Love After Betrayal</label>
+          <label><input type="checkbox" data-group="trope" value="Reincarnation / Past Lives"> Reincarnation / Past Lives</label>
+          <label><input type="checkbox" data-group="trope" value="Time Travel"> Time Travel</label>
+          <label><input type="checkbox" data-group="trope" value="Parallel Universes"> Parallel Universes</label>
+          <label><input type="checkbox" data-group="trope" value="Immortals / Mythical Beings"> Immortals / Mythical Beings</label>
+          <label><input type="checkbox" data-group="trope" value="Body Swapping"> Body Swapping</label>
+          <label><input type="checkbox" data-group="trope" value="Strong Female Lead"> Strong Female Lead</label>
+          <label><input type="checkbox" data-group="trope" value="Cold Male Lead / Tsundere"> Cold Male Lead / Tsundere</label>
+          <label><input type="checkbox" data-group="trope" value="Chaebol / CEO Romance"> Chaebol / CEO Romance</label>
+          <label><input type="checkbox" data-group="trope" value="Poor Girl x Rich Guy"> Poor Girl x Rich Guy</label>
+          <label><input type="checkbox" data-group="trope" value="Boys’ Love (BL)"> Boys’ Love (BL)</label>
+          <label><input type="checkbox" data-group="trope" value="School / Campus Drama"> School / Campus Drama</label>
+          <label><input type="checkbox" data-group="trope" value="Office Romance"> Office Romance</label>
+          <label><input type="checkbox" data-group="trope" value="Celebrity & Idol Industry"> Celebrity & Idol Industry</label>
+          <label><input type="checkbox" data-group="trope" value="Contract Marriage / Fake Relationship"> Contract Marriage / Fake Relationship</label>
+          <label><input type="checkbox" data-group="trope" value="Noona Romance (Older Woman / Younger Man)"> Noona Romance (Older Woman / Younger Man)</label>
+          <label><input type="checkbox" data-group="trope" value="Palace Politics"> Palace Politics</label>
+          <label><input type="checkbox" data-group="trope" value="Medical / Legal Dramas"> Medical / Legal Dramas</label>
          </div>
-        </details>
-
-  <!-- RESULTS GRID -->
-  <section id="dramaList"></section> 
-  <script>
-  document.addEventListener("DOMContentLoaded", () => {} );
-    const searchBar       = document.getElementById("searchBar");
-    const genreFiltersDiv = document.getElementById("genreFilters");
-    const tropeFiltersDiv = document.getElementById("tropeFilters");
-    const dramaListDiv    = document.getElementById("dramaList");
-    const filtersDiv      = document.getElementById("filters");
-fetch("asset.json")
-  .then(res => {
-    if (!res.ok) throw new Error("Network response was not ok");
-    return res.json();
-  })
-  .then(data => {
-    // use your JSON data here
-    window.dramas = data;
-    initUI();
-  })
-  .catch(err => console.error("Error loading asset.json:", err));
-    const coreGenres = [
-      "Romance",
-      "Comedy / Romantic Comedy (Rom-Com)",
-      "Melodrama",
-      "Fantasy",
-      "Historical / Period Drama (Sageuk in Korean)",
-      "Modern Slice of Life",
-      "Action / Thriller / Suspense",
-      "Mystery / Crime",
-      "Supernatural",
-      "Horror / Psychological"
-    ];
-
-    const tropes = [
-      "Revenge / Vendetta",
-      "Tragic Love",
-      "Love Triangle",
-      "Secret Identity",
-      "Love After Betrayal",
-      "Reincarnation / Past Lives",
-      "Time Travel",
-      "Parallel Universes",
-      "Immortals / Mythical Beings",
-      "Body Swapping",
-      "Strong Female Lead",
-      "Cold Male Lead / Tsundere",
-      "Chaebol / CEO Romance",
-      "Poor Girl x Rich Guy",
-      "Boys’ Love (BL)",
-      "School / Campus Drama",
-      "Office Romance",
-      "Celebrity & Idol Industry",
-      "Contract Marriage / Fake Relationship",
-      "Noona Romance (Older Woman / Younger Man)",
-      "Palace Politics",
-      "Medical / Legal Dramas"
-    ];
-
-    function createCheckbox(name, group) {
-      const id = `${group}-${name}`.replace(/\s+/g, "-");
-      return `
-        <label style="display:block; font-size:0.9rem;">
-          <input type="checkbox" value="${name}" data-group="${group}" id="${id}" />
-          ${name}
-        </label>`;
-    }
-
-    let dramas = [];
-
-    function initUI() {
-      genreFiltersDiv.innerHTML = coreGenres
-        .map(g => createCheckbox(g, "genre")).join("");
-      tropeFiltersDiv.innerHTML = tropes
-        .map(t => createCheckbox(t, "trope")).join("");
-      renderList(dramas);
-      attachEventListeners();
-    }
-
-    function renderList(list) {
-      }
-      dramaListDiv.innerHTML = list.map(d => `
-        <div class="drama-card">
-          <img src="${d.poster}" alt="${d.title} poster" loading="lazy">
-          <h3>${d.title}</h3>
-          <p>${d.year} • ${d.country}</p>
-          <div style="margin:.25rem .5rem;">
-            ${d.genres.map(g => `<span class="badge">${g}</span>`).join("")}
-            ${d.tropes.map(t => `<span class="badge">${t}</span>`).join("")}
-          </div>
-        </div>
-      `).join("");
-
-    function filterDramas() {
-      const term = searchBar.value.trim().toLowerCase();
-      const selectedGenres = Array.from(
-        document.querySelectorAll('input[data-group="genre"]:checked')
-      ).map(cb => cb.value);
-      const selectedTropes = Array.from(
-        document.querySelectorAll('input[data-group="trope"]:checked')
-      ).map(cb => cb.value);
-
-      const filtered = dramas.filter(d => {
-        const matchesSearch = d.title.toLowerCase().includes(term);
-        const matchesGenres = selectedGenres.every(g => d.genres.includes(g));
-        const matchesTropes = selectedTropes.every(t => d.tropes.includes(t));
-        return matchesSearch && matchesGenres && matchesTropes;
-      });
-
-      renderList(filtered);
-    }
-
-    function attachEventListeners() {
-      searchBar.addEventListener("input", filterDramas);
-      filtersDiv.addEventListener("change", e => {
-        if (e.target.matches('input[type="checkbox"]')) filterDramas();
-      });
-    }
+      </details>
+    </aside>
+   <section id="dramaList"></section>
+  </main>
   
-    // Fetch asset.json
-
-    fetch('asset.json')
-      .then(r => r.json())
-      .then(data => {
-        window.dramas = data;
-        populateFilters(data);
-        displayDramas(data);
-      })
-      .catch(console.error);
-  </script>
-   <script src="script.js" defer></script>
 </body>
 </html>
 
-  </script>
-</body>
-</html> 
  
