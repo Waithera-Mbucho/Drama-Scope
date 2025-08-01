@@ -23,16 +23,16 @@
     <h1>DramaScope</h1>
     <nav>
        <nav>
-      <a href="index.html">Home</a> |
-      <a href="drama.html">Discover Dramas</a> |
-      <a href="watchlist.html">My Watchlist</a>
+      <a href="docs/index.html">Home</a> |
+      <a href="docs/drama.html">Discover Dramas</a> |
+      <a href="docs/watchlist.html">My Watchlist</a>
     </nav>
     <h1>DramaScope</h1>
     <p>Filter by Genre, Trope & Search</p>
   </header>
 
   <main>
-    <script src="script.js"></script>
+    <script src="docs/script.js"></script>
     <!-- FILTERS PANEL -->
     <aside id="filters">
       <h2>Filters</h2>
@@ -99,7 +99,7 @@
     const tropeFiltersDiv = document.getElementById("tropeFilters");
     const dramaListDiv    = document.getElementById("dramaList");
     const filtersDiv      = document.getElementById("filters");
-fetch("asset.json")
+fetch("docs/asset.json")
   .then(res => {
     if (!res.ok) throw new Error("Network response was not ok");
     return res.json();
@@ -208,8 +208,9 @@ fetch("asset.json")
       });
     }
   
-    // Fetch asset.json, then call populateFilters() & displayDramas()
-    fetch('asset.json')
+    // Fetch asset.json
+
+    fetch('docs/asset.json')
       .then(r => r.json())
       .then(data => {
         window.dramas = data;
@@ -218,7 +219,7 @@ fetch("asset.json")
       })
       .catch(console.error);
   </script>
-   <script src="script.js" defer></script>
+   <script src="docs/script.js" defer></script>
 </body>
 </html>
 
