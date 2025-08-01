@@ -1,7 +1,7 @@
 let dramas = [];
 
 // 1) Load your JSON data
-fetch('../asset.json')
+fetch('docs/asset.json')
   .then(res => {
     if (!res.ok) throw new Error("Failed to load asset.json");
     return res.json();
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let dramas = [];
 
   // 5) Fetch your JSON file (adjust the path if script.js lives in docs/script/)
-  fetch("../asset.json")
+  fetch("docs/asset.json")
     .then(res => {
       console.log("asset.json status:", res.status);
       return res.json();
