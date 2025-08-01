@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchBar = document.getElementById('searchBar');
   const genreDropdown = document.getElementById('genreDropdown');
   const dramaListDiv = document.getElementById('dramaList');
-   
+    const carouselTrack = document.getElementById('allCarouselTrack');
   let dramas = [];
 
    fetch('asset.json')
@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(data => {
       dramas = data;
       renderList(dramas);
+       if (carouselTrack) renderCarousel(dramas);
     })
     .catch(err => {
       console.error('Failed to load asset.json:', err);
@@ -34,7 +35,17 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
     `).join('');
   }
-
+    function renderCarousel(list) {
+    if (!carouselTrack) return;
+    carouselTrack.innerHTML = list.map(d => `
+      <div class="carousel-item">
+        <a href="drama.html?title=${encodeURIComponent(d.title)}">
+          <img src="${d.poster}" alt="${d.title} poster">
+          <div class="carousel-overlay"><span>${d.year}</span></div>
+        </a>
+      </div>
+    `).join('');
+  }
   function filterDramas() {
     const term = searchBar.value.trim().toLowerCase();
     const selectedGenre = genreDropdown.value;

@@ -55,44 +55,27 @@
     }
   </style>
   <!-- ────────────────────────────────────── -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DramaScope</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&family=Roboto:wght@400;700&family=Lemon&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>DramaScope 🎬</h1>
-    <p>Discover, track, and share your favorite Asian dramas.</p>
-  </header>
+  <header class="hero">
+    <div class="hero-content">
+      <h1 class="logo">DRAMA SCOPE</h1>
+      <h2 class="subtitle">DISCOVER NEW DRAMAS</h2>
+      <nav>
+        <a href="index.html" class="btn">Home</a>
+        <a href="docs/drama.html" class="btn">Discover</a>
+        <a href="docs/watchlist.html" class="btn">Watchlist</a>
 
-  <nav>
-    <label for="countryFilter">Filter by Country:</label>
-    <select id="countryFilter">
-      <option value="all">All</option>
-      <option value="korea">Korean</option>
-      <option value="china">Chinese</option>
-      <option value="thailand">Thai</option>
-      <option value="japan">Japanese</option>
-      <option value="philippines">Filipino</option>
-    </select>
-  </nav>
-
-  <header>
-    <nav>
-      <a href="index.html">Home</a> |
-      <a href="drama.html">Discover Dramas</a> |
-      <a href="watchlist.html">My Watchlist</a>
-    </nav>
-  </header>
-
-  <main>
-    <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);"
-          width="800"
-          height="450"
-          src="https://embed.figma.com/design/JWY4nFNvGfFdlICayQaJCn/Untitled?node-id=2-3&embed-host=share"
-          allowfullscreen></iframe>
-    <section id="searchSection">
-      <input type="text" id="searchBar" placeholder="Search dramas by title or genre..." />
-      <button id="searchBtn">Search</button>
-    </section>
-
+ 
     <!-- ───────── Updated Featured Carousel ───────── -->
     <section id="featured">
   <h2>Featured Dramas</h2>
@@ -156,7 +139,7 @@
   </main>
 
   <footer>
-    <p>Built with ❤️ by Waithera Mbucho | © 2025 DramaScope</p>
+    <p>Built with ❤️ by Waithera Mbucho | © 2024 DramaScope</p>
   </footer>
 
   <script src="script.js"></script>
