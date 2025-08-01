@@ -1,96 +1,71 @@
-docs/style.css
- Base Reset + Global
-  {
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
-   font-family: 'Poppins', 'Nunito', sans-serif;
- }
--body {
-  background-color: #ffeef1;
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
 body {
- background-color: #fffbe6;
-   color: #bdebf3;
-   line-height: 1.7;
-   font-size: 1rem;
-   padding: 2rem;
- }
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  background-color: #111;
+  color: #98e7f1;
 }
- 
- Layout Containers
- container {
-   max-width: 1200px;
-   margin: 0 auto;
-   padding: 2rem;
-   background-color: #fff8f8;
-   border-radius: 20px;
-   box-shadow: 0 5px 20px rgba(0,0,0,0.03);
- }
- 
- Header
- header {
-   text-align: center;
-   margin-bottom: 2rem;
- }
- 
- header h1 {
-   font-size: 3rem;
-   color: #d88f9a;
-
-   header p {
-   border-radius: 30px;
-   cursor: pointer;
-   transition: all 0.3s;
-   font-size: 1rem;
- }
+.hero {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
 }
- #searchBtn:hover {
-   background-color: #f7b7d3;
-   color: #FFB7CE;
- }
- 
- Carousel to Column Desktop
- carousel {
-   margin: 3rem auto;
-   max-width: 1000px;
-   overflow: hidden;
- }
- 
- carousel-track {
-   display: grid;
-   grid-template-columns: repeat(2, 1fr);
-   gap: 2rem;
- }
- 
- drama-card {
-   position: relative;
-   background-color: #fff;
-   border-radius: 20px;
-   padding: 1.5rem;
-   text-align: center;
-   box-shadow: 0 3px 10px rgba(0,0,0,0.05);
- }
- 
- drama-card img {
-   width: 100%;
-   height: 280px;
-   object-fit: cover;
-   border-radius: 15px;
-   margin-bottom: 0.75rem;
- }
- 
- drama-info h3 {
-   font-size: 1.3rem;
-   margin-bottom: 0.3rem;
-   color: #FFB7CE;
+.logo {
+  font-family: 'Rubik Moonrocks', cursive;
+  font-size: 128pt;
+  letter-spacing: 0.035em;
+  color: #F6E179;
+  text-shadow: 4px 4px 0 #000000;
+  -webkit-text-stroke: 1px #F7BAF2;
+  margin: 0;
 }
-
- 
+.subtitle {
+  font-family: 'Roboto', sans-serif;
+  font-size: 32pt;
+  color: #81D3FB;
+  -webkit-text-stroke: 1px #81D3FB;
+  margin: 0 0 2rem;
+}
+nav {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.btn {
+  font-family: 'Lemon', cursive;
+  font-size: 32pt;
+  color: #FFFFFF;
+  background-color: #EAA8C0;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+.btn:hover {
+  background-color: #d797b2;
+}
+footer {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16pt;
+  color: #ffb7ce;
+  padding: 1rem;
+}
 like-btn {
   position: absolute;
   top: 8px;
   right: 8px;
-  background-color: #eec8e0;
+  background-color: #F6E179;
   border: none;
   color: #3a2c2c;
   border-radius: 50%;
@@ -99,15 +74,76 @@ like-btn {
   cursor: pointer;
 }
 like-btn.liked {
-  background-color: #ee556c;
+  background-color: #e63651;
   color: #fff;
 }
+/* Carousel layout */
+.featured-carousel {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 1rem;
+  scrollbar-width: none;
+}
+featured-carousel::-webkit-scrollbar {
+  display: none;
+}
+carousel-track {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  scroll-snap-type: x mandatory;
+}
+carousel-item {
+  flex: 0 0 auto;
+  position: relative;
+  scroll-snap-align: start;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+}
+carousel-item img {
+  display: block;
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+}
+carousel-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  text-align: center;
+  padding: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+.carousel-item:hover .carousel-overlay,
+.carousel-item:focus-within .carousel-overlay {
+  opacity: 1;
+}
 
- drama-info p {
-   font-size: 0.95rem;
-   color: #6e4f50;
- }
- /* Discover page styles */
+@media (min-width: 600px) {
+  .filter-input,
+  .filter-select {
+    width: auto;
+  }
+}
+
+.discover-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.drama-card {
+  position: relative;
+  cursor: pointer;
+}
+
+/* Discover page styles */
 header.banner {
   background-image: url('images/discoverpage.jpg');
   background-size: cover;
@@ -115,28 +151,51 @@ header.banner {
   padding: 4rem 2rem;
   text-align: center;
 }
- /* Carousel Buttons (optional if JS is added) */
- carousel-btn {
-   font-size: 2rem;
-   background: none;
-   border: none;
-   color: #f7b7d3;
-   cursor: pointer;
-   position: absolute;
-   top: 50%;
-   transform: translateY(-50%);
- }
- 
- drama-card:hover .card-overlay,
-.drama-card:focus-within .card-overlay {
-  opacity: 1;
+
+.page-title {
+  font-family: 'Rubik Moonrocks', cursive;
+  font-size: 64pt;
+  letter-spacing: 0.02em;
+  color: #FFB7CE;
+  text-shadow: 2px 2px 0 rgba(0,0,0,0.5);
+  margin: 0;
 }
- carousel-btn.prev { left: 20px; }
- carousel-btn.next { right: 20px; }
- 
- Watchlist Section
- #watchlist {
-   max-width: 1000px;
-   margin: 3rem auto;
- }
- 
+
+.filter-panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.filter-btn {
+  font-family: 'Lemon', cursive;
+  font-size: 24pt;
+  background-color: #000000;
+  color: #CFFFA5;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.filter-btn.active {
+  background-color: #CFFFA5;
+  color: #000000;
+}
+
+.filter-input,
+.filter-select {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16pt;
+  padding: 0.5rem;
+  border: 1px solid #CCCCCC;
+  border-radius: 4px;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .logo { font-size: 64pt; }
+  .subtitle { font-size: 24pt; }
+  .btn { font-size: 24pt; }
+}
