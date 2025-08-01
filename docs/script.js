@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     dramaListDiv.innerHTML = list.map(d => `
       <div class="drama-card">
+      <button class="like-btn" data-title="${encodeURIComponent(d.title)}">❤</button>
         <img src="${d.poster}" alt="${d.title} poster" loading="lazy">
         <h3>${d.title}</h3>
         <p>${d.year} • ${d.country}</p>
@@ -59,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const matchesTropes = selectedTropes.every(t => d.tropes.includes(t));
       return matchesSearch && matchesGenre && matchesTropes;
     });
+  
 
     renderList(filtered);
   }
@@ -69,3 +71,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.target.matches('input[data-group="trope"]')) filterDramas();
   });
 });
+dramaListDiv.addEventListener('click', e => {
+    if (!e.target.classList.contains('like-btn')) return;
+    const title = decodeURIComponent(e.target.dataset.title);
+    const drama = dramas.find(d => d.title === title);
+    if (!drama) return;
+    const list = JSON.parse(localStorage.getItem('dramascope_watchlist')) || [];
+    if (!list.some(d => d.title === drama.title)) {
+      list.push(drama);
+      localStorage.setItem('dramascope_watchlist', JSON.stringify(list));
+    }
+    e.target.classList.add('liked');
+  });
