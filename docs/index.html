@@ -4,7 +4,57 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DramaScope</title>
-<link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- ─────────── Carousel CSS ─────────── -->
+  <style>
+    .featured-carousel {
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 1rem;
+      scrollbar-width: none; /* Firefox */
+    }
+    .featured-carousel::-webkit-scrollbar {
+      display: none;        /* Chrome/Safari */
+    }
+    .carousel-track {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 1rem;
+      scroll-snap-type: x mandatory;
+    }
+    .carousel-item {
+      flex: 0 0 auto;
+      position: relative;
+      scroll-snap-align: start;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .carousel-item img {
+      display: block;
+      width: 200px;    /* adjust size as needed */
+      height: 300px;
+      object-fit: cover;
+    }
+    .carousel-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      text-align: center;
+      padding: 0.5rem;
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+    .carousel-item:hover .carousel-overlay,
+    .carousel-item:focus-within .carousel-overlay {
+      opacity: 1;
+    }
+  </style>
+  <!-- ────────────────────────────────────── -->
 </head>
 <body>
   <header>
@@ -23,6 +73,7 @@
       <option value="philippines">Filipino</option>
     </select>
   </nav>
+
   <header>
     <nav>
       <a href="index.html">Home</a> |
@@ -37,41 +88,28 @@
       <button id="searchBtn">Search</button>
     </section>
 
-   <section id="featured">
-  <h2>📌 Featured Dramas</h2>
-  <div class="carousel">
-    <button class="carousel-btn prev">&#10094;</button>
-    
-    <div class="carousel-track">
-      <div class="drama-card active">
-        <img src="assets/images/drama1.jpg" alt="Drama 1 Poster" />
-        <div class="drama-info">
-          <h3>Extraordinary You</h3>
-          <p>Country: Korea | Genre: Fantasy, Romance</p>
+    <!-- ───────── Updated Featured Carousel ───────── -->
+    <section id="featured">
+      <h2>Featured Dramas</h2>
+      <div class="featured-carousel">
+        <div class="carousel-track">
+          <div class="carousel-item" data-year="2022">
+            <img src="docs/images/Extraordinary Attorney Woo.jpgg" alt="Extraordinary Attorney Woo Poster" />
+            <div class="carousel-overlay"><span>2020</span></div>
+          </div>
+          <div class="carousel-item" data-year="2020">
+            <img src="docs/images/eternal love.jpg" alt="Eternal Love Poster" />
+            <div class="carousel-overlay"><span>2020</span></div>
+          </div>
+          <div class="carousel-item" data-year="2021">
+            <img src="docs/images/bad genius.jpg" alt="Bad Genius Poster" />
+            <div class="carousel-overlay"><span>2021</span></div>
+          </div>
+          <!-- add more items as needed -->
         </div>
       </div>
-
-      <div class="drama-card">
-        <img src="assets/images/drama2.jpg" alt="Drama 2 Poster" />
-        <div class="drama-info">
-          <h3>Eternal Love</h3>
-          <p>Country: China | Genre: Fantasy, Historical</p>
-        </div>
-      </div>
-
-      <div class="drama-card">
-        <img src="assets/images/drama3.jpg" alt="Drama 3 Poster" />
-        <div class="drama-info">
-          <h3>Bad Genius</h3>
-          <p>Country: Thailand | Genre: Thriller, Drama</p>
-        </div>
-      </div>
-    </div>
-
-    <button class="carousel-btn next">&#10095;</button>
-  </div>
-</section>
-
+    </section>
+    <!-- ──────────────────────────────────────────── -->
 
     <section id="watchlist">
       <h2>📺 Your Watchlist</h2>

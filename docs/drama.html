@@ -43,6 +43,8 @@
 
       <!-- Core Genres -->
       <Genres open>
+       <summary><strong>Core Genres</strong></summary>
+       <div id="genreFilters"></div> 
         <label for="genreDropdown"><strong> Genres</strong></label>
         <select id="genreDropdown">
           option value="">-- All Genres --</option>
@@ -59,7 +61,7 @@
       </select>
       </details>
 
-     <!-- Tropes & Subgenres -->
+      <!-- Tropes & Subgenres -->
         <details>
         <summary><strong>Tropes </strong></summary>
          <div id="tropeFilters">
@@ -91,7 +93,7 @@
   <!-- RESULTS GRID -->
   <section id="dramaList"></section> 
   <script>
-  document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("DOMContentLoaded", () => {} );
     const searchBar       = document.getElementById("searchBar");
     const genreFiltersDiv = document.getElementById("genreFilters");
     const tropeFiltersDiv = document.getElementById("tropeFilters");
@@ -167,9 +169,6 @@ fetch("asset.json")
     }
 
     function renderList(list) {
-      if (!list.length) {
-        dramaListDiv.innerHTML = "<p>No dramas match your filters 🤷‍♀️</p>";
-        return;
       }
       dramaListDiv.innerHTML = list.map(d => `
         <div class="drama-card">
@@ -182,7 +181,6 @@ fetch("asset.json")
           </div>
         </div>
       `).join("");
-    }
 
     function filterDramas() {
       const term = searchBar.value.trim().toLowerCase();
@@ -209,17 +207,22 @@ fetch("asset.json")
         if (e.target.matches('input[type="checkbox"]')) filterDramas();
       });
     }
-
-    // load your data and kick off the UI
-    fetch("asset.json")
+  
+    // Fetch asset.json, then call populateFilters() & displayDramas()
+    fetch('asset.json')
       .then(r => r.json())
       .then(data => {
-        dramas = data;
-        initUI();
+        window.dramas = data;
+        populateFilters(data);
+        displayDramas(data);
       })
-      .catch(err => console.error("Error loading dramas:", err));
-  });
+      .catch(console.error);
   </script>
+   <script src="script.js" defer></script>
 </body>
 </html>
- Drama Wishlist
+
+  </script>
+</body>
+</html> 
+ 
