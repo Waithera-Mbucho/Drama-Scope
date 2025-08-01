@@ -1,19 +1,18 @@
-[
-  {
+ {
     "title": "Queen of Tears",
     "year": "2024",
     "country": "South Korea",
-    "poster": "docs/images/queen of tears.jpg",
+    "poster": "images/queenoftears.jpg",
     "genres": ["Romantic Comedy"],
     "description": "Queen of Tears follows married couple Hong Hae-in and Baek Hyun-woo as they face a crisis when Hae-in is diagnosed with brain cancer, forcing them to confront their relationship and past mistakes." ,
     "tropes":  ["Tragic Love", "Strong Female Lead"]
   
-  },
+ },
   {
     "title": "Crash Landing on You",
     "year": "2019–2020",
     "country": "South Korea",
-    "poster": "docs/images/Crash Landing on You K-drama Official poster Netflix.jpg",
+    "poster": "images/crashlanding.jpg",
     "genres": ["Romantic Comedy", "Drama"],
     "description": "Heiress Yoon Se-ri accidentally paraglides into North Korea, where officer Ri Jung-hyuk hides and protects her—sparking an unlikely, cross-border romance amid political tensions." ,
     "tropes": ["Cold Male Lead / Tsundere", "Tragic Love"]
@@ -23,7 +22,7 @@
     "title": "Reply 1988",
     "year": "2015–2016",
     "country": "South Korea",
-    "poster": "docs/images/replay 1988.jpg",
+    "poster": "images/replay1988.jpg",
     "genres": ["Family Drama", "Comedy", "Romance"],
     "description": "Set in Ssangmun-dong in 1988, five friends and their families navigate first loves, friendships and the bonds that tie their households together." ,
     "tropes": ["School / Campus Drama", "Love Triangle"]
@@ -33,7 +32,7 @@
     "title": "Guardian: The Lonely and Great God (Goblin)",
     "year": "2016–2017",
     "country": "South Korea",
-    "poster": "docs/images/Goblin (2016).jpg",
+    "poster": "images/goblin.jpg",
     "genres": ["Fantasy", "Romance", "Drama", "Comedy"],
     "description": "Kim Shin is a cursed immortal (‘goblin’) who needs a human bride to end his life; Ji Eun-tak, a girl who can see spirits, may be the one to break his curse." ,
     "tropes": ["Immortals / Mythical Beings", "Tragic Love"]
@@ -43,7 +42,7 @@
     "title": "Mr. Sunshine",
     "year": "2018",
     "country": "South Korea",
-    "poster": "docs/images/mr sunshine.jpg",
+    "poster": "images/mrsunshine.jpg",
     "genres": ["Historical", "Romance", "Melodrama"],
     "description": "An American soldier returns to Joseon-era Korea and falls for an aristocrat’s daughter, entwining their fates amid the fight for independence." ,
     "tropes": ["Tragic Love", "Palace Politics"] 
@@ -53,7 +52,7 @@
     "title": "Nirvana in Fire",
     "year": "2015",
     "country": "China",
-    "poster": "docs/images/Nirvana in Fire 琅琊榜。.jpg",
+    "poster": "images/nirvana.jpg",
     "genres": ["Wuxia", "Historical", "Political Thriller"],
     "description": "Under the alias Mei Changsu, Lin Shu enters the capital to clear his family’s name and seek justice for a conspiracy that branded them traitors years earlier." ,
     "tropes": ["Revenge / Vendetta", "Palace Politics"]
@@ -62,7 +61,7 @@
     "title": "Story of Yanxi Palace",
     "year": "2018",
     "country": "China",
-    "poster": "docs/images/Story Of Yanxi Palace 🇨🇳.jpg",
+    "poster": "images/storyofyanxi.jpg",
     "genres": ["Historical Fiction", "Drama"],
     "description": "Palace maid Wei Yingluo navigates court intrigues during the Qianlong Emperor’s reign, using wit and resilience to rise through the ranks." ,
     "tropes": ["Palace Politics", "Strong Female Lead"]
@@ -71,7 +70,7 @@
     "title": "Eternal Love (Three Lives, Three Worlds)",
     "year": "2017",
     "country": "China",
-    "poster": "docs/images/eternal love.jpg",
+    "poster": "images/eternallove.jpg",
     "genres": ["Fantasy", "Romance"],
     "description": "Deity Bai Qian and god Ye Hua share a love that spans three lifetimes, overcoming celestial rivalries and fate to be together." ,
     "tropes": ["Reincarnation / Past Lives", "Tragic Love"]
@@ -80,7 +79,7 @@
     "title": "The Romance of Tiger and Rose",
     "year": "2020",
     "country": "China",
-    "poster": "docs/images/THE ROMANCE OF TIGER AND ROSE.jpg",
+    "poster": "images/romanceoftigerandrose.jpg",
     "genres": ["Comedy", "Romance"],
     "description": "Guan Pipi—a mortal woman—falls in love with Helan Jingting, a fox spirit bound by a millennium-old curse, as they search for a cure and each other.",
     "tropes": ["Immortals / Mythical Beings", "Tragic Love"]
@@ -90,7 +89,7 @@
     "title": "Ashes of Love",
     "year": "2018",
     "country": "China",
-    "poster": "docs/images/ashes of love.jpg",
+    "poster": "images/ashesoflove.jpg",
     "genres": ["Fantasy", "Romance"],
     "description": "Flower sprite Jin Mi, given an elixir to never love, and fire immortal Xufeng share a tragic, immortal-spanning romance in the Heavenly Realm.",
     "tropes": ["Immortals / Mythical Beings", "Tragic Love"]
@@ -100,7 +99,7 @@
     "title": "Bad Buddy",
     "year": "2021–2022",
     "country": "Thailand",
-    "poster": "docs/images/Bad Buddy.jpg",
+    "poster": "images/badbuddy.jpg",
     "genres": ["Romantic Comedy", "BL"],
     "description": "Two boys from rival hardware-store families, Pat and Pran, grow up hating each other—until they discover unexpected feelings they can’t ignore." ,
     "tropes": ["Boys’ Love (BL)", "School / Campus Drama"]
@@ -109,7 +108,7 @@
     "title": "2gether: The Series",
     "year": "2020",
     "country": "Thailand",
-    "poster": "docs/images/2gether: The Series.jpg",
+    "poster": "docs/images/2gether.jpg",
     "genres": ["Romantic Comedy", "BL"],
     "description": "College boys Tine and Sarawat enter a fake relationship that soon blossoms into real love, challenging their own and their friends’ expectations." ,
     "tropes": ["Contract Marriage / Fake Relationship", "Boys’ Love (BL)"]
@@ -118,7 +117,7 @@
     "title": "SOTUS: The Series",
     "year": "2016–2018",
     "country": "Thailand",
-    "poster": "docs/images/SOTUS The Series | Сотус.jpg",
+    "poster": "images/sotus.jpg",
     "genres": ["Romantic Comedy", "Drama", "BL"],
     "description": "Freshman Kongpob endures the SOTUS hazing system led by senior Arthit—only to find respect and something deeper blooming between them." ,
     "tropes": ["School / Campus Drama", "Boys’ Love (BL)"]
@@ -128,7 +127,7 @@
     "title": "F4 Thailand: Boys Over Flowers",
     "year": "2021–2022",
     "country": "Thailand",
-    "poster": "docs/images/f4.jpg",
+    "poster": "images/f4.jpg",
     "genres": ["Romance", "Drama", "Comedy"],
     "description": "Gorya, a poor flower-shop girl, enters an elite school dominated by the F4 boys—sparked by mean pranks, she learns the meaning of friendship and love." ,
     "tropes": ["School / Campus Drama", "Poor Girl x Rich Guy"]
@@ -138,7 +137,7 @@
     "title": "Midnight Diner: Tokyo Stories",
     "year": "2016",
     "country": "Japan",
-    "poster": "docs/images/Midnight Diner.jpg",
+    "poster": "images/midnightdiner.jpg",
     "genres": ["Slice of Life", "Drama"],
     "description": "A 12-seat diner opens from midnight to 7 AM; the Master cooks any dish his patrons request, each episode revealing heartfelt stories of Tokyo’s night-owls." ,
     "tropes": ["Strong Female Lead", "Tragic Love"]
@@ -147,7 +146,7 @@
     "title": "Mada Mada Koi wa Tsuzuku yo Doko Made mo",
     "year": "2020",
     "country": "Japan",
-    "poster": "docs/images/Koi wa Tsuzuku yo Doko Made mo.jpg",
+    "poster": "images/koi.jpg",
     "genres": ["Romantic Comedy"],
     "description": "Spin-off special where nurse Nanase and colleagues wind down at a bar run by a handsome fortune-telling waiter—sharing laughs, tears and love advice." ,
      "tropes": ["Office Romance", "Tragic Love"]
@@ -157,7 +156,7 @@
     "title": "Good Morning Call",
     "year": "2016",
     "country": "Japan",
-    "poster": "docs/images/Good Morning Call - 2016 Haruka Fukuhara and Shunya Shiraishi.jpg",
+    "poster": "images/goodmorning.jpg",
     "genres": ["Romance", "School"],
     "description": "High schooler Nao ends up living with the most popular guy in school, Hisashi, in a secret cohabitation setup that sparks an unexpected romance.",
     "tropes": ["Forced Cohabitation", "Cold Male Lead", "High School Romance"]
@@ -166,7 +165,7 @@
     "title": "My Little Lover (Minami kun no Koibito)",
     "year": "2015",
     "country": "Japan",
-    "poster": "docs/images/My Little Lover (Minami kun no Koibito).jpg",
+    "poster": "images/mylittle.jpg",
     "genres": ["Fantasy", "Romance"],
     "description": "Chiyomi shrinks to a few inches tall and must live in secret at her childhood friend Minami’s house as they navigate growing feelings.",
     "tropes": ["Childhood Friends", "Hidden Identity", "Fantasy Romance"]
@@ -175,7 +174,7 @@
     "title": "Todome no Kiss",
     "year": "2018",
     "country": "Japan",
-    "poster": "docs/images/Todome no Kiss (2018).jpg",
+    "poster": "images/todome.jpg",
     "genres": ["Fantasy", "Mystery", "Romance"],
     "description": "Host Kouta has the power to time travel every time he dies from a mysterious woman's kiss — and he uses it to alter fate and chase power.",
     "tropes": ["Time Travel", "Second Chances", "Mysterious Girl"]
@@ -184,10 +183,9 @@
     "title": "Scarlet Heart Ryeo",
     "year": "2016",
     "country": "Korea",
-    "poster": "docs/images/scarlet heart ryeo.jpg",
+    "poster": "images/scarletheartryeo.jpg",
     "genres": ["Historical", "Romance", "Fantasy"],
     "description": "Modern woman Hae Soo is transported to the Goryeo Dynasty, where palace intrigue and a love triangle among royal princes await her.",
     "tropes": ["Time Travel", "Reincarnation / Past Lives", "Love Triangle", "Tragic Love"]
   }
-]
-]
+

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DramaScope – Discover Dramas</title>
-  <link rel="stylesheet" href="docs/style.css">
+  <link rel="stylesheet" href="style.css">
   <style>
     /* Minimal styling so you can see it work without style.css */
     body { font-family: system-ui, sans-serif; margin: 0; }
@@ -23,16 +23,16 @@
     <h1>DramaScope</h1>
     <nav>
        <nav>
-      <a href="docs/index.html">Home</a> |
-      <a href="docs/drama.html">Discover Dramas</a> |
-      <a href="docs/watchlist.html">My Watchlist</a>
+      <a href="index.html">Home</a> |
+      <a href="drama.html">Discover Dramas</a> |
+      <a href="watchlist.html">My Watchlist</a>
     </nav>
     <h1>DramaScope</h1>
     <p>Filter by Genre, Trope & Search</p>
   </header>
 
   <main>
-    <script src="docs/script.js"></script>
+    <script src="script.js"></script>
     <!-- FILTERS PANEL -->
     <aside id="filters">
       <h2>Filters</h2>
@@ -210,7 +210,7 @@ fetch("asset.json")
   
     // Fetch asset.json
 
-    fetch('docs/asset.json')
+    fetch('asset.json')
       .then(r => r.json())
       .then(data => {
         window.dramas = data;
@@ -219,7 +219,7 @@ fetch("asset.json")
       })
       .catch(console.error);
   </script>
-   <script src="docs/script.js" defer></script>
+   <script src="script.js" defer></script>
 </body>
 </html>
 
