@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const dramaCards = dramaListDiv ? Array.from(dramaListDiv.querySelectorAll('.drama-card')) : [];
   let dramas = [];
 
-  const assetPath = location.pathname.startsWith('asset.json');
+   const assetPath = './asset.json';
   fetch(assetPath)
     .then(res => res.json())
     .then(data => {
@@ -16,7 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
       if (detailsDiv) showDetails();
     })
     .catch(err => {
-      console.error('Failed to load asset.json:', err);
+      if (dramaListDiv) {
+        dramaListDiv.insertAdjacentHTML('beforeend', '<p class="error">Failed to load additional dramas.</p>');
+      }
       if (dramaListDiv) dramaListDiv.innerHTML = '<p>Failed to load dramas.</p>';
     });
 
