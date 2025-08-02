@@ -61,6 +61,24 @@ footer {
   color: #ffb7ce;
   padding: 1rem;
 }
+* Discover page styles */
+header.banner {
+  background-image: url('images/discoverpage.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.page-title {
+  font-family: 'Rubik Moonrocks', cursive;
+  font-size: 64pt;
+  letter-spacing: 0.02em;
+  color: #FFB7CE;
+  text-shadow: 2px 2px 0 rgba(0,0,0,0.5);
+  margin: 0;
+}
+
 like-btn {
   position: absolute;
   top: 8px;
@@ -143,57 +161,7 @@ carousel-overlay {
   cursor: pointer;
 }
 
-/* Discover page styles */
-header.banner {
-  background-image: url('images/discoverpage.jpg');
-  background-size: cover;
-  background-position: center;
-  padding: 4rem 2rem;
-  text-align: center;
-}
 
-.page-title {
-  font-family: 'Rubik Moonrocks', cursive;
-  font-size: 64pt;
-  letter-spacing: 0.02em;
-  color: #FFB7CE;
-  text-shadow: 2px 2px 0 rgba(0,0,0,0.5);
-  margin: 0;
-}
-
-.filter-panel {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-  padding: 1rem;
-}
-
-.filter-btn {
-  font-family: 'Lemon', cursive;
-  font-size: 24pt;
-  background-color: #000000;
-  color: #CFFFA5;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.filter-btn.active {
-  background-color: #CFFFA5;
-  color: #000000;
-}
-
-.filter-input,
-.filter-select {
-  font-family: 'Roboto', sans-serif;
-  font-size: 16pt;
-  padding: 0.5rem;
-  border: 1px solid #CCCCCC;
-  border-radius: 4px;
-  width: 100%;
-}
 @media (max-width: 768px) {
   .logo { font-size: 64pt; }
   .subtitle { font-size: 24pt; }
