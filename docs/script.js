@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const dramaCards = dramaListDiv ? Array.from(dramaListDiv.querySelectorAll('.drama-card')) : [];
   let dramas = [];
 
-  const assetPath = location.pathname.startsWith('/docs/') ? 'asset.json' : 'docs/asset.json';
+  const assetPath = location.pathname.startsWith('asset.json');
   fetch(assetPath)
     .then(res => res.json())
     .then(data => {
