@@ -2,42 +2,25 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchBar = document.getElementById('searchBar');
   const genreDropdown = document.getElementById('genreDropdown');
   const dramaListDiv = document.getElementById('dramaList');
-    const carouselTrack = document.getElementById('allCarouselTrack');
+  const carouselTrack = document.getElementById('allCarouselTrack');
+  const detailsDiv = document.getElementById('details');
+  const dramaCards = dramaListDiv ? Array.from(dramaListDiv.querySelectorAll('.drama-card')) : [];
   let dramas = [];
 
-   const assetPath = location.pathname.startsWith('/docs/') ? 'asset.json' : 'docs/asset.json';
+  const assetPath = location.pathname.startsWith('/docs/') ? 'asset.json' : 'docs/asset.json';
   fetch(assetPath)
     .then(res => res.json())
     .then(data => {
       dramas = data;
-      renderList(dramas);
-       if (carouselTrack) renderCarousel(dramas);
+      if (carouselTrack) renderCarousel(dramas);
+      if (detailsDiv) showDetails();
     })
     .catch(err => {
       console.error('Failed to load asset.json:', err);
-      dramaListDiv.innerHTML = '<p>Failed to load dramas.</p>';
+      if (dramaListDiv) dramaListDiv.innerHTML = '<p>Failed to load dramas.</p>';
     });
 
-    
-  function renderList(list) {
-    if (!list.length) {
-      dramaListDiv.innerHTML = '<p>No dramas match your filters.</p>';
-      return;
-    }
-    dramaListDiv.innerHTML = list.map(d => `
-      <div class="drama-card">
-      <button class="like-btn" data-title="${encodeURIComponent(d.title)}">❤</button>
-        <img src="${d.poster}" alt="${d.title} poster" loading="lazy">
-        <h3>${d.title}</h3>
-        <p>${d.year} • ${d.country}</p>
-       <div>
-          ${d.genres.map(g => `<span class="badge">${g}</span>`).join('')}
-          ${d.tropes.map(t => `<span class="badge">${t}</span>`).join('')}
-        </div>
-      </div>
-    `).join('');
-  }
-    function renderCarousel(list) {
+  function renderCarousel(list) {
     if (!carouselTrack) return;
     carouselTrack.innerHTML = list.map(d => `
       <div class="carousel-item">
@@ -53,26 +36,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const selectedGenre = genreDropdown.value;
     const selectedTropes = [...document.querySelectorAll('input[data-group="trope"]:checked')].map(cb => cb.value);
 
-    const filtered = dramas.filter(d => {
-      const matchesSearch =
-        d.title.toLowerCase().includes(term) ||
-        d.genres.some(g => g.toLowerCase().includes(term));
-      const matchesGenre = !selectedGenre || d.genres.includes(selectedGenre);
-      const matchesTropes = selectedTropes.every(t => d.tropes.includes(t));
-      return matchesSearch && matchesGenre && matchesTropes;
+    
+    dramaCards.forEach(card => {
+      const title = card.dataset.title.toLowerCase();
+      const genres = card.dataset.genres.split(',');
+      const tropes = card.dataset.tropes.split(',');
+      const matchesSearch = !term || title.includes(term) || genres.some(g => g.toLowerCase().includes(term));
+      const matchesGenre = !selectedGenre || genres.includes(selectedGenre);
+      const matchesTropes = selectedTropes.every(t => tropes.includes(t));
+      card.style.display = (matchesSearch && matchesGenre && matchesTropes) ? '' : 'none';
     });
-  
-
-    renderList(filtered);
   }
 
-  searchBar.addEventListener('input', filterDramas);
-  genreDropdown.addEventListener('change', filterDramas);
-  document.getElementById('filters').addEventListener('change', e => {
-    if (e.target.matches('input[data-group="trope"]')) filterDramas();
-  });
-});
-dramaListDiv.addEventListener('click', e => {
+  if (searchBar && genreDropdown && dramaListDiv) {
+    searchBar.addEventListener('input', filterDramas);
+    genreDropdown.addEventListener('change', filterDramas);
+    document.getElementById('filters').addEventListener('change', e => {
+      if (e.target.matches('input[data-group="trope"]')) filterDramas();
+    });
+    filterDramas();
+  }
+
+  
+  dramaListDiv?.addEventListener('click', e => {
     if (!e.target.classList.contains('like-btn')) return;
     const title = decodeURIComponent(e.target.dataset.title);
     const drama = dramas.find(d => d.title === title);
@@ -84,3 +70,24 @@ dramaListDiv.addEventListener('click', e => {
     }
     e.target.classList.add('liked');
   });
+  function showDetails() {
+    const params = new URLSearchParams(location.search);
+    const title = params.get('title');
+    const drama = dramas.find(d => d.title === title);
+    if (!drama) {
+      detailsDiv.innerHTML = '<p>Drama not found.</p>';
+      return;
+    }
+    document.getElementById('detailTitle').textContent = drama.title;
+    detailsDiv.innerHTML = `
+      <img src="${drama.poster}" alt="${drama.title} poster" style="max-width:300px;width:100%;height:auto;">
+      <p><strong>Native Title:</strong> ${drama['native titile'] || ''}</p>
+      <p><strong>Year:</strong> ${drama.year}</p>
+      <p><strong>Country:</strong> ${drama.country}</p>
+      <p><strong>Genres:</strong> ${drama.genres.join(', ')}</p>
+      <p><strong>Cast:</strong> ${drama.cast.join(', ')}</p>
+      <p>${drama.description}</p>
+    `;
+  }
+
+});

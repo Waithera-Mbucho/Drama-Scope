@@ -1,5 +1,5 @@
-
-html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,57 +15,22 @@ html lang="en">
 </head>
 <body>
   
+  <header class="banner">
+    <nav>
       <a href="index.html" class="btn">Home</a>
-      <a href="discover.html" class="btn">Discover</a>
+      <a href="drama.html" class="btn">Discover</a>
       <a href="watchlist.html" class="btn">Watchlist</a>
     </nav>
+    <h1 class="page-title">Discover Dramas</h1>
   </header>
-  <style>
-   #dramaList {
-      flex:3 1 400px;
-      display:grid;
-      grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
-      gap:1rem;
-    }
-    .drama-card {
-      border:1px solid #ddd;
-      border-radius:8px;
-      overflow:hidden;
-      position:relative;
-    }
-    .like-btn {
-      position:absolute;
-      top:8px;
-      right:8px;
-      background-color:#eec8e0;
-      border:none;
-      color:#ffffff;
-      border-radius:50%;
-      width:32px;
-      height:32px;
-      cursor:pointer;
-    }
-    .like-btn.liked { background-color:#d88f9a; }
-  </style>
-  <main>
-   
-   <section id="carouselSection">
-      <h2>All Dramas</h2>
-      <div class="featured-carousel">
-        <div class="carousel-track" id="allCarouselTrack"></div>
-      </div>
-    </section>
-
-
-    <aside id="filters">
+ 
+  <main style="display:flex;flex-wrap:wrap;">
+    <aside id="filters" style="flex:1 1 200px;padding:1rem;max-width:250px;">
       <h2>Filters</h2>
-
       <label for="searchBar"><strong>Search Title</strong></label>
-      <input type="text" id="searchBar" placeholder="e.g. Goblin" style="width:100%;margin-bottom:1rem;" />
-
+      <input type="text" id="searchBar" placeholder="e.g. Goblin" style="width:100%;margin-bottom:1rem;">
       <details open>
         <summary><strong>Genre</strong></summary>
-        <label for="genreDropdown" class="visually-hidden">
         <select id="genreDropdown" style="width:100%;margin-bottom:1rem;">
           <option value="">-- All Genres --</option>
          <option value="BL">BL</option>
@@ -73,7 +38,7 @@ html lang="en">
           <option value="Drama">Drama</option>
           <option value="Family Drama">Family Drama</option>
           <option value="Fantasy">Fantasy</option>
-         <option value="Historical Fiction">Historical Fiction</option>
+          <option value="Historical Fiction">Historical Fiction</option>
           <option value="Historical">Historical</option>
           <option value="Melodrama">Melodrama</option>
           <option value="Mystery">Mystery</option>
@@ -85,11 +50,10 @@ html lang="en">
           <option value="Wuxia">Wuxia</option>
         </select>
       </details>
-
-       <details>
+      <details>
         <summary><strong>Tropes</strong></summary>
         <div id="tropeFilters">
-           <label><input type="checkbox" data-group="trope" value="Love Triangle"> Love Triangle</label>
+          <label><input type="checkbox" data-group="trope" value="Love Triangle"> Love Triangle</label>
           <label><input type="checkbox" data-group="trope" value="Secret Identity"> Secret Identity</label>
           <label><input type="checkbox" data-group="trope" value="Love After Betrayal"> Love After Betrayal</label>
           <label><input type="checkbox" data-group="trope" value="Reincarnation / Past Lives"> Reincarnation / Past Lives</label>
@@ -109,145 +73,140 @@ html lang="en">
           <label><input type="checkbox" data-group="trope" value="Noona Romance (Older Woman / Younger Man)"> Noona Romance (Older Woman / Younger Man)</label>
           <label><input type="checkbox" data-group="trope" value="Palace Politics"> Palace Politics</label>
           <label><input type="checkbox" data-group="trope" value="Medical / Legal Dramas"> Medical / Legal Dramas</label>
-         </div>
+        </div>
       </details>
     </aside>
    
-  html lang="en">
-
-  <section class="featured-carousel">
-    <div class="carousel-track">
-<div class="carousel-item" data-year="2024">
-  <a href="drama.html?title=Queen%20of%20Tears" target="_self">
-    <img src="images/queenoftears.jpg" alt="Queen of Tears Poster" />
-    <div class="carousel-overlay"><span>2024</span></div>
-  </a>
-</div>
-<div class="carousel-item" data-year="2019–2020">
-  <a href="drama.html?title=Crash%20Landing%20on%20You" target="_self">
-    <img src="images/crashlanding.jpg" alt="Crash Landing on You Poster" />
-    <div class="carousel-overlay"><span>2019–2020</span></div>
-  </a>
-</div>
-<div class="carousel-item" data-year="2015–2016">
-  <a href="drama.html?title=Reply%201988" target="_self">
-    <img src="images/replay1988.jpg" alt="Reply 1988 Poster" />
-    <div class="carousel-overlay"><span>2015–2016</span></div>
-  </a>
-</div>
-<div class="carousel-item" data-year="2016–2017">
-  <a href="drama.html?title=Guardian%3A%20The%20Lonely%20and%20Great%20God%20%28Goblin%29" target="_self">
-    <img src="images/goblin.jpg" alt="Guardian: The Lonely and Great God (Goblin) Poster" />
-    <div class="carousel-overlay"><span>2016–2017</span></div>
-  </a>
-</div>
-<div class="carousel-item" data-year="2018">
-  <a href="drama.html?title=Mr.%20Sunshine" target="_self">
-    <img src="images/mrsunshine.jpg" alt="Mr. Sunshine Poster" />
-    <div class="carousel-overlay"><span>2018</span></div>
-  </a>
-</div>
-<div class="carousel-item" data-year="2015">
-  <a href="drama.html?title=Nirvana%20in%20Fire" target="_self">
-    <img src="images/nirvana.jpg" alt="Nirvana in Fire Poster" />
-    <div class="carousel-overlay"><span>2015</span></div>
-  </a>
-</div>
-<div class="carousel-item" data-year="2018">
-  <a href="drama.html?title=Story%20of%20Yanxi%20Palace" target="_self">
-    <img src="images/storyofyanxi.jpg" alt="Story of Yanxi Palace Poster" />
-    <div class="carousel-overlay"><span>2018</span></div>
-  </a>
-</div>
-<div class="carousel-item" data-year="2017">
-  <a href="drama.html?title=Eternal%20Love%20%28Three%20Lives%2C%20Three%20Worlds%29" target="_self">
-    <img src="images/eternallove.jpg" alt="Eternal Love (Three Lives, Three Worlds) Poster" />
-    <div class="carousel-overlay"><span>2017</span></div>
-  </a>
-</div>
-<div class="carousel-item" data-year="2020">
-  <a href="drama.html?title=The%20Romance%20of%20Tiger%20and%20Rose" target="_self">
-    <img src="images/romanceoftigerandrose.jpg" alt="The Romance of Tiger and Rose Poster" />
-    <div class="carousel-overlay"><span>2020</span></div>
-  </a>
-</div>
-<div class="carousel-item" data-year="2018">
-  <a href="drama.html?title=Ashes%20of%20Love" target="_self">
-    <img src="images/ashesoflove.jpg" alt="Ashes of Love Poster" />
-    <div class="carousel-overlay"><span>2018</span></div>
-  </a>
-</div>
-<div class="carousel-item" data-year="2021–2022">
-  <a href="drama.html?title=Bad%20Buddy" target="_self">
-    <img src="images/badbuddy.jpg" alt="Bad Buddy Poster" />
-    <div class="carousel-overlay"><span>2021–2022</span></div>
-  </a>
-</div>
-<div class="carousel-item" data-year="2020">
-  <a href="drama.html?title=2gether%3A%20The%20Series" target="_self">
-    <img src="docs/images/2gether.jpg" alt="2gether: The Series Poster" />
-    <div class="carousel-overlay"><span>2020</span></div>
-  </a>
-</div>
-<div class="carousel-item" data-year="2016–2018">
-  <a href="drama.html?title=SOTUS%3A%20The%20Series" target="_self">
-    <img src="images/sotus.jpg" alt="SOTUS: The Series Poster" />
-    <div class="carousel-overlay"><span>2016–2018</span></div>
-  </a>
-</div>
-<div class="carousel-item" data-year="2021–2022">
-  <a href="drama.html?title=F4%20Thailand%3A%20Boys%20Over%20Flowers" target="_self">
-    <img src="images/f4.jpg" alt="F4 Thailand: Boys Over Flowers Poster" />
-    <div class="carousel-overlay"><span>2021–2022</span></div>
-  </a>
-</div>
-<div class="carousel-item" data-year="2016">
-  <a href="drama.html?title=Midnight%20Diner%3A%20Tokyo%20Stories" target="_self">
-    <img src="images/midnightdiner.jpg" alt="Midnight Diner: Tokyo Stories Poster" />
-    <div class="carousel-overlay"><span>2016</span></div>
-  </a>
-</div>
-<div class="carousel-item" data-year="2020">
-  <a href="drama.html?title=Mada%20Mada%20Koi%20wa%20Tsuzuku%20yo%20Doko%20Made%20mo" target="_self">
-    <img src="images/koi.jpg" alt="Mada Mada Koi wa Tsuzuku yo Doko Made mo Poster" />
-    <div class="carousel-overlay"><span>2020</span></div>
-  </a>
-</div>
-<div class="carousel-item" data-year="2016">
-  <a href="drama.html?title=Good%20Morning%20Call" target="_self">
-    <img src="images/goodmorning.jpg" alt="Good Morning Call Poster" />
-    <div class="carousel-overlay"><span>2016</span></div>
-  </a>
-</div>
-<div class="carousel-item" data-year="2015">
-  <a href="drama.html?title=My%20Little%20Lover%20%28Minami%20kun%20no%20Koibito%29" target="_self">
-    <img src="images/mylittle.jpg" alt="My Little Lover (Minami kun no Koibito) Poster" />
-    <div class="carousel-overlay"><span>2015</span></div>
-  </a>
-</div>
-<div class="carousel-item" data-year="2018">
-  <a href="drama.html?title=Todome%20no%20Kiss" target="_self">
-    <img src="images/todome.jpg" alt="Todome no Kiss Poster" />
-    <div class="carousel-overlay"><span>2018</span></div>
-  </a>
-</div>
-<div class="carousel-item" data-year="2016">
-  <a href="drama.html?title=Scarlet%20Heart%20Ryeo" target="_self">
-    <img src="images/scarletheartryeo.jpg" alt="Scarlet Heart Ryeo Poster" />
-    <div class="carousel-overlay"><span>2016</span></div>
-  </a>
-</div>
-    </div>
-  </section>
-
-  </footer>
-
+      <section id="dramaList" class="discover-grid" style="flex:3 1 600px;">
+        <div class="drama-card" data-title="Queen of Tears" data-genres="Romantic Comedy" data-tropes="Tragic Love,Strong Female Lead">
+          <button class="like-btn" data-title="Queen of Tears">❤</button>
+          <a href="details.html?title=Queen%20of%20Tears"><img src="images/queenoftears.jpg" alt="Queen of Tears poster"></a>
+          <h3>Queen of Tears</h3>
+          <p>2024 • South Korea</p>
+        </div>
+        <div class="drama-card" data-title="Crash Landing on You" data-genres="Romantic Comedy,Drama" data-tropes="Cold Male Lead / Tsundere,Tragic Love">
+          <button class="like-btn" data-title="Crash Landing on You">❤</button>
+          <a href="details.html?title=Crash%20Landing%20on%20You"><img src="images/crashlanding.jpg" alt="Crash Landing on You poster"></a>
+          <h3>Crash Landing on You</h3>
+          <p>2019–2020 • South Korea</p>
+        </div>
+        <div class="drama-card" data-title="Reply 1988" data-genres="Family Drama,Comedy,Romance" data-tropes="School / Campus Drama,Love Triangle">
+          <button class="like-btn" data-title="Reply 1988">❤</button>
+          <a href="details.html?title=Reply%201988"><img src="images/replay1988.jpg" alt="Reply 1988 poster"></a>
+          <h3>Reply 1988</h3>
+          <p>2015–2016 • South Korea</p>
+        </div>
+        <div class="drama-card" data-title="Guardian: The Lonely and Great God (Goblin)" data-genres="Fantasy,Romance,Drama,Comedy" data-tropes="Immortals / Mythical Beings,Tragic Love">
+          <button class="like-btn" data-title="Guardian: The Lonely and Great God (Goblin)">❤</button>
+          <a href="details.html?title=Guardian%3A%20The%20Lonely%20and%20Great%20God%20(Goblin)"><img src="images/goblin.jpg" alt="Guardian: The Lonely and Great God (Goblin) poster"></a>
+          <h3>Guardian: The Lonely and Great God (Goblin)</h3>
+          <p>2016–2017 • South Korea</p>
+        </div>
+        <div class="drama-card" data-title="Mr. Sunshine" data-genres="Historical,Romance,Melodrama" data-tropes="Tragic Love,Palace Politics">
+          <button class="like-btn" data-title="Mr. Sunshine">❤</button>
+          <a href="details.html?title=Mr.%20Sunshine"><img src="images/mrsunshine.jpg" alt="Mr. Sunshine poster"></a>
+          <h3>Mr. Sunshine</h3>
+          <p>2018 • South Korea</p>
+        </div>
+        <div class="drama-card" data-title="Nirvana in Fire" data-genres="Wuxia,Historical,Political Thriller" data-tropes="Revenge / Vendetta,Palace Politics">
+          <button class="like-btn" data-title="Nirvana in Fire">❤</button>
+          <a href="details.html?title=Nirvana%20in%20Fire"><img src="images/nirvana.jpg" alt="Nirvana in Fire poster"></a>
+          <h3>Nirvana in Fire</h3>
+          <p>2015 • China</p>
+        </div>
+        <div class="drama-card" data-title="Story of Yanxi Palace" data-genres="Historical Fiction,Drama" data-tropes="Palace Politics,Strong Female Lead">
+          <button class="like-btn" data-title="Story of Yanxi Palace">❤</button>
+          <a href="details.html?title=Story%20of%20Yanxi%20Palace"><img src="images/storyofyanxi.jpg" alt="Story of Yanxi Palace poster"></a>
+          <h3>Story of Yanxi Palace</h3>
+          <p>2018 • China</p>
+        </div>
+        <div class="drama-card" data-title="Eternal Love (Three Lives, Three Worlds)" data-genres="Fantasy,Romance" data-tropes="Reincarnation / Past Lives,Tragic Love">
+          <button class="like-btn" data-title="Eternal Love (Three Lives, Three Worlds)">❤</button>
+          <a href="details.html?title=Eternal%20Love%20(Three%20Lives%2C%20Three%20Worlds)"><img src="images/eternallove.jpg" alt="Eternal Love (Three Lives, Three Worlds) poster"></a>
+          <h3>Eternal Love (Three Lives, Three Worlds)</h3>
+          <p>2017 • China</p>
+        </div>
+        <div class="drama-card" data-title="The Romance of Tiger and Rose" data-genres="Comedy,Romance" data-tropes="Immortals / Mythical Beings,Tragic Love">
+          <button class="like-btn" data-title="The Romance of Tiger and Rose">❤</button>
+          <a href="details.html?title=The%20Romance%20of%20Tiger%20and%20Rose"><img src="images/romanceoftigerandrose.jpg" alt="The Romance of Tiger and Rose poster"></a>
+          <h3>The Romance of Tiger and Rose</h3>
+          <p>2020 • China</p>
+        </div>
+        <div class="drama-card" data-title="Ashes of Love" data-genres="Fantasy,Romance" data-tropes="Immortals / Mythical Beings,Tragic Love">
+          <button class="like-btn" data-title="Ashes of Love">❤</button>
+          <a href="details.html?title=Ashes%20of%20Love"><img src="images/ashesoflove.jpg" alt="Ashes of Love poster"></a>
+          <h3>Ashes of Love</h3>
+          <p>2018 • China</p>
+        </div>
+        <div class="drama-card" data-title="Bad Buddy" data-genres="Romantic Comedy,BL" data-tropes="Boys’ Love (BL),School / Campus Drama">
+          <button class="like-btn" data-title="Bad Buddy">❤</button>
+          <a href="details.html?title=Bad%20Buddy"><img src="images/badbuddy.jpg" alt="Bad Buddy poster"></a>
+          <h3>Bad Buddy</h3>
+          <p>2021–2022 • Thailand</p>
+        </div>
+        <div class="drama-card" data-title="2gether: The Series" data-genres="Romantic Comedy,BL" data-tropes="Contract Marriage / Fake Relationship,Boys’ Love (BL)">
+          <button class="like-btn" data-title="2gether: The Series">❤</button>
+          <a href="details.html?title=2gether%3A%20The%20Series"><img src="images/2gether.jpg" alt="2gether: The Series poster"></a>
+          <h3>2gether: The Series</h3>
+          <p>2020 • Thailand</p>
+        </div>
+        <div class="drama-card" data-title="SOTUS: The Series" data-genres="Romantic Comedy,Drama,BL" data-tropes="School / Campus Drama,Boys’ Love (BL)">
+          <button class="like-btn" data-title="SOTUS: The Series">❤</button>
+          <a href="details.html?title=SOTUS%3A%20The%20Series"><img src="images/sotus.jpg" alt="SOTUS: The Series poster"></a>
+          <h3>SOTUS: The Series</h3>
+          <p>2016–2018 • Thailand</p>
+        </div>
+        <div class="drama-card" data-title="F4 Thailand: Boys Over Flowers" data-genres="Romance,Drama,Comedy" data-tropes="School / Campus Drama,Poor Girl x Rich Guy">
+          <button class="like-btn" data-title="F4 Thailand: Boys Over Flowers">❤</button>
+          <a href="details.html?title=F4%20Thailand%3A%20Boys%20Over%20Flowers"><img src="images/f4.jpg" alt="F4 Thailand: Boys Over Flowers poster"></a>
+          <h3>F4 Thailand: Boys Over Flowers</h3>
+          <p>2021–2022 • Thailand</p>
+        </div>
+        <div class="drama-card" data-title="Midnight Diner: Tokyo Stories" data-genres="Slice of Life,Drama" data-tropes="Strong Female Lead,Tragic Love">
+          <button class="like-btn" data-title="Midnight Diner: Tokyo Stories">❤</button>
+          <a href="details.html?title=Midnight%20Diner%3A%20Tokyo%20Stories"><img src="images/midnightdiner.jpg" alt="Midnight Diner: Tokyo Stories poster"></a>
+          <h3>Midnight Diner: Tokyo Stories</h3>
+          <p>2016 • Japan</p>
+        </div>
+        <div class="drama-card" data-title="Mada Mada Koi wa Tsuzuku yo Doko Made mo" data-genres="Romantic Comedy" data-tropes="Office Romance,Tragic Love">
+          <button class="like-btn" data-title="Mada Mada Koi wa Tsuzuku yo Doko Made mo">❤</button>
+          <a href="details.html?title=Mada%20Mada%20Koi%20wa%20Tsuzuku%20yo%20Doko%20Made%20mo"><img src="images/koi.jpg" alt="Mada Mada Koi wa Tsuzuku yo Doko Made mo poster"></a>
+          <h3>Mada Mada Koi wa Tsuzuku yo Doko Made mo</h3>
+          <p>2020 • Japan</p>
+        </div>
+        <div class="drama-card" data-title="Good Morning Call" data-genres="Romance,School" data-tropes="Forced Cohabitation,Cold Male Lead,High School Romance">
+          <button class="like-btn" data-title="Good Morning Call">❤</button>
+          <a href="details.html?title=Good%20Morning%20Call"><img src="images/goodmorning.jpg" alt="Good Morning Call poster"></a>
+          <h3>Good Morning Call</h3>
+          <p>2016 • Japan</p>
+        </div>
+        <div class="drama-card" data-title="My Little Lover (Minami kun no Koibito)" data-genres="Fantasy,Romance" data-tropes="Childhood Friends,Hidden Identity,Fantasy Romance">
+          <button class="like-btn" data-title="My Little Lover (Minami kun no Koibito)">❤</button>
+          <a href="details.html?title=My%20Little%20Lover%20(Minami%20kun%20no%20Koibito)"><img src="images/mylittle.jpg" alt="My Little Lover (Minami kun no Koibito) poster"></a>
+          <h3>My Little Lover (Minami kun no Koibito)</h3>
+          <p>2015 • Japan</p>
+        </div>
+        <div class="drama-card" data-title="Todome no Kiss" data-genres="Fantasy,Mystery,Romance" data-tropes="Time Travel,Second Chances,Mysterious Girl">
+          <button class="like-btn" data-title="Todome no Kiss">❤</button>
+          <a href="details.html?title=Todome%20no%20Kiss"><img src="images/todome.jpg" alt="Todome no Kiss poster"></a>
+          <h3>Todome no Kiss</h3>
+          <p>2018 • Japan</p>
+        </div>
+        <div class="drama-card" data-title="Scarlet Heart Ryeo" data-genres="Historical,Romance,Fantasy" data-tropes="Time Travel,Reincarnation / Past Lives,Love Triangle,Tragic Love">
+          <button class="like-btn" data-title="Scarlet Heart Ryeo">❤</button>
+          <a href="details.html?title=Scarlet%20Heart%20Ryeo"><img src="images/scarletheartryeo.jpg" alt="Scarlet Heart Ryeo poster"></a>
+          <h3>Scarlet Heart Ryeo</h3>
+          <p>2016 • Korea</p>
+        </div>
+        <div class="drama-card" data-title="Reborn Rich" data-genres="Fantasy,Drama,Thriller" data-tropes="Reincarnation / Past Lives,Revenge / Vengence ,Family Drama">
+          <button class="like-btn" data-title="Reborn Rich">❤</button>
+          <a href="details.html?title=Reborn%20Rich"><img src="images/rebornrich.jpg" alt="Reborn Rich poster"></a>
+          <h3>Reborn Rich</h3>
+          <p>2022 • Korea</p>
+        </div>
+      </section>
+  </main>
   <script src="script.js"></script>
-</body>
-</html>
- 
-</main>
-  
 </body>
 </html>
 
