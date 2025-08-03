@@ -89,7 +89,38 @@ document.addEventListener('DOMContentLoaded', () => {
       <p><strong>Genres:</strong> ${drama.genres.join(', ')}</p>
       <p><strong>Cast:</strong> ${drama.cast.join(', ')}</p>
       <p>${drama.description}</p>
+        <div class="rating" id="ratingContainer">
+        ${[1,2,3,4,5].map(n=>`<span class="star" data-value="${n}">&#9733;</span>`).join('')}
+      </div>
+      <p id="ratingOutput" class="rating-output"></p>
     `;
-  }
 
-});
+    const ratings = JSON.parse(localStorage.getItem('dramascope_ratings')) || {};
+    const ratingContainer = document.getElementById('ratingContainer');
+    const output = document.getElementById('ratingOutput');
+    const current = ratings[drama.title] || 0;
+    highlight(current);
+
+    ratingContainer.addEventListener('click', e => {
+      if (!e.target.classList.contains('star')) return;
+      const value = +e.target.dataset.value;
+      ratings[drama.title] = value;
+      localStorage.setItem('dramascope_ratings', JSON.stringify(ratings));
+      highlight(value);
+    });
+
+    function highlight(value) {
+      ratingContainer.querySelectorAll('.star').forEach(star => {
+        star.classList.toggle('selected', +star.dataset.value <= value);
+      });
+      if (value) {
+        const stars = [1,2,3,4,5]
+          .map(n => `<span class="star ${n <= value ? 'selected' : ''}">&#9733;</span>`)
+          .join('');
+        output.innerHTML = `Your rating: ${stars} (${value}/5)`;
+      } else {
+        output.textContent = '';
+      }
+    }
+  }});
+

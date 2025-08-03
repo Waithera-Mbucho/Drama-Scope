@@ -278,8 +278,138 @@
     "director": "Jang Tae Yoo",
     "writer": "Kim Tae Hee",
     "cast": ["Song Joong Ki", "Lee Sung Min"],
-    "description": "After being betrayed and killed by his boss, a loyal employee is reborn as the youngest son of the wealthy Jin family, seeking revenge and control over the conglomerate.",
-    "tropes": ["Reincarnation / Past Lives", "Revenge / Vengence ", "Family Drama"]
+    "description": ["After being betrayed and killed by his boss, a loyal employee is reborn as the youngest son of the wealthy Jin family, seeking revenge and control over the conglomerate."],
+    "tropes": ["Reincarnation / Past Lives, Revenge / Vendetta, Strong woman lead"]
+  },
+
+  {
+    "title": "The Glory",
+    "native titile": "더 글로리",
+    "year": "2022",
+    "country": "Korea",
+    "poster": "images/theglory.jpg",
+    "genres": ["Thriller", "Drama"],
+    "director": "Ahn Gil Ho",
+    "writer": "Kim Eun Sook",
+    "cast": ["Song Hye Kyo", "Lee Do Hyun"],
+    "description": ["After suffering severe bullying in high school, Moon Dong Eun plots a meticulous revenge against her tormentors by becoming the homeroom teacher of their children."],
+    "tropes": ["Revenge / Vendetta", "School / Campus Drama "  ] 
+  },
+
+  {
+    "title": "Extraordinary Attorney Woo",
+    "native titile" : "이상한 변호사 우영우",
+    "year": "2022",
+    "country": "Korea",
+    "poster": "images/extraordinaryattorneywoo.jpg",
+    "genres": ["Legal Drama", "Comedy"],
+    "director": "Yoo In Sik",
+    "writer": "Moon Ji Won",
+    "cast": ["Park Eun Bin", "Kang Tae Oh"],
+    "description": ["Young Woo, a brilliant attorney with autism spectrum disorder, navigates the complexities of law and human relationships while proving her exceptional skills in the courtroom."],
+    "tropes" : ["Strong Female Lead", "Legal Drama", "Slice of Life"]
+
+    },
+
+  {
+    "title": "Crash Course in Romance",
+    "native titile": "일타 스캔들",
+    "year": "2023",
+    "country": "Korea",
+    "poster": "images/crashcourse.jpg",
+    "genres": ["Romantic Comedy", "Slice of Life"],
+    "director": "Kim Ji Hyun",
+    "writer": "Yang Hee Seung",
+    "cast": ["Jeon Do Yeon", "Jung Kyung Ho"],
+    "description": ["A heartwarming story of a banchan store owner and a top math instructor who find love amidst the pressures of education and family."],
+    "tropes": ["Age Gap Romance", "Slice of Life", "School / Campus Drama"]
+  },
+  
+  
+  {
+    "title": "My Name",
+    "native titile": "마이 네임",
+    "year": "2021",
+    "country": "Korea",
+    "poster": "images/myname.jpg",
+    "genres": ["Action", "Thriller"],
+    "director": "Kim Jin Min",
+    "writer": "Kim Ba Da",
+    "cast": ["Han So Hee", "Park Hee Soon"],
+    "description": ["After her father's death, Yoon Ji Woo joins a crime syndicate to find his killer, going undercover as a police officer while seeking revenge."],
+    "tropes": ["Revenge / Vendetta"]
+  },
+  {
+    "title": "Vincenzo",
+    "native titile": "빈센조",
+    "year": "2021",
+    "country": "Korea",
+    "poster": "images/vincenzo.jpg",
+    "genres": ["Crime", "Comedy", "Drama"],
+    "director": "Kim Hee Won",
+    "writer": "Park Jae Bum",
+    "cast": ["Song Joong Ki", "Jeon Yeo Bin"],
+    "description": ["An Italian mafia lawyer returns to Korea and teams up with a tough lawyer to take down corrupt conglomerates and seek justice."],
+    "tropes": ["Anti-Hero", "Revenge / Vendetta", "Strong woman lead"]
+
+  },
+  {
+    "title": "Hotel Del Luna", 
+    "native titile": "호텔 델루나",
+    "year": "2019",
+    "country": "Korea",
+    "poster": "images/hoteldelluna.jpg",
+    "genres": ["Fantasy", "Romance", "Comedy"],
+    "director": "Oh Choong Hwan",
+    "writer": "Hong Jung Eun, Hong Mi Ran",
+    "cast": ["IU", "Yeo Jin Goo"],
+    "description": ["A mystical hotel for ghosts is run by the beautiful but cursed Jang mana, who meets a human manager with a mysterious past."],
+    "tropes": ["Immortals / Mythical Beings", "Tragic Love ", "Strong woman lead"]
+
+  },
+  
+  {
+    "title": "The King: Eternal Monarch",
+    "native titile": "더 킹: 영원의 군주",
+    "year": "2020",
+    "country": "Korea",
+    "poster": "images/theking.jpg",
+    "genres": ["Fantasy", "Romance", "Drama"],
+    "director": "Baek Sang Hoon",
+    "writer": "Kim Eun Sook",
+    "cast": ["Lee Min Ho", "Kim Go Eun"],
+    "description": ["A modern-day emperor crosses into a parallel universe to stop a dark force threatening both worlds, while falling in love with a detective."],
+    "tropes": ["Parallel Universe", "Reincarnation / Past Lives", "Tragic Love"]
+
+  },
+  {
+    "title": "Love Alarm",
+    "native titile": "좋아하면 울리는",
+    "year": "2019",
+    "country": "Korea",
+    "poster": "images/lovealarm.jpg",
+    "genres": ["Romantic Drama", "Sci-Fi"],
+    "director": "Lee Na Jung",
+    "writer": "Chon Kye Young",
+    "cast": ["Kim So Hyun", "Song Kang"],
+    "description": ["In a world where an app alerts you if someone nearby loves you, high school student Kim Jo Jo navigates love triangles and personal growth."],
+    "tropes": ["Love Triangle", "School / Campus Drama", "Coming of Age"]
+
+  },
+  {
+    "title": "My Name is Kim Sam Soon",
+    "native titile": "내 이름은 김삼순",
+    "year": "2005",
+    "country": "Korea",
+    "poster": "images/mylovelysamsoon.jpg",
+    "genres": ["Romantic Comedy", "Drama"],
+    "director": "Kim Yoon Cheol",
+    "writer": "Kim Do Woo",
+    "cast": ["Kim Sun Ah", "Hyun Bin"],
+    "description": ["A 30-year-old pastry chef struggles with her career and love life until she enters a contract relationship with a younger hotelier."],
+    "tropes": ["Age Gap Romance", "Contract Marriage / Fake Relationship", "Strong woman lead"]
+
   }
   ]
+
 

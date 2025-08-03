@@ -1,0 +1,68 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DramaScope - Releases</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="banner">
+    <nav>
+      <a href="index.html" class="btn">Home</a>
+      <a href="drama.html" class="btn">Discover</a>
+      <a href="watchlist.html" class="btn">Watchlist</a>
+      <a href="releases.html" class="btn">Releases</a>
+      <a href="signin.html" class="btn">Sign In</a>
+    </nav>
+    <h1 class="page-title">Upcoming Releases</h1>
+  </header>
+  <main id="releaseList" style="padding:2rem;"></main>
+  <script>
+    fetch('releases.json')
+      .then(r => r.json())
+      .then(list => {
+        list.sort((a, b) => new Date(a.releaseDate) - new Date(b.releaseDate));
+        const ul = document.createElement('ul');
+        ul.className = 'release-list';
+        list.forEach(item => {
+          const li = document.createElement('li');
+          li.className = 'release-item';
+          const date = new Date(item.releaseDate);
+          const schedule = item.schedule ? `, ${item.schedule}` : '';
+          const network = item.network ? ` on ${item.network}` : '';
+          li.innerHTML = `
+            <img src="${item.poster}" alt="${item.title} poster">
+            <div>
+              <strong>${item.title}</strong>
+              <p>${date.toDateString()}${schedule}${network} <span class="countdown" data-date="${item.releaseDate}"></span></p>
+            </div>
+          `;
+          ul.appendChild(li);
+        });
+        document.getElementById('releaseList').appendChild(ul);
+        updateCountdowns();
+        setInterval(updateCountdowns, 1000);
+      })
+      .catch(() => {
+        document.getElementById('releaseList').textContent = 'Failed to load release schedule.';
+      });
+
+    function updateCountdowns() {
+      document.querySelectorAll('.countdown').forEach(span => {
+        const target = new Date(span.dataset.date);
+        const diff = target - new Date();
+        if (diff <= 0) {
+          span.textContent = '(Released)';
+          return;
+        }
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+        span.textContent = `(${days}d ${hours}h ${minutes}m ${seconds}s)`;
+      });
+    }
+  </script>
+</body>
+</html>

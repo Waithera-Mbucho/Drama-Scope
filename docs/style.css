@@ -184,3 +184,47 @@ carousel-overlay {
   .subtitle { font-size: 24pt; }
   .btn { font-size: 24pt; }
 }
+
+/* Rating stars */
+.rating .star {
+  font-size: 24px;
+  color: #ccc;
+  cursor: pointer;
+}
+.rating .star.selected {
+  color: gold;
+}
+
+.rating-output .star {
+  font-size: 20px;
+  color: #ccc;
+}
+.rating-output .star.selected {
+  color: gold;
+}
+countdown {
+  font-weight: bold;
+  margin-left: 0.5rem;
+}
+
+.release-list {
+  list-style: none;
+  padding: 0;
+}
+
+.release-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.release-item img {
+  width: 120px;
+  height: auto;
+  border-radius: 4px;
+}
+
+.release-item p {
+  margin: 0.25rem 0 0;
+}

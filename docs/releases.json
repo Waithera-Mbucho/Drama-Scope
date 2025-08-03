@@ -1,0 +1,132 @@
+[
+  {
+    "title": "Mary Kills People",
+    "releaseDate": "2025-08-01T22:00:00+09:00",
+    "poster": "images/marykills.jpg",
+    "region": "Korea",
+    "network": "MBC",
+    "schedule": "Fridays & Saturdays at 10 p.m. KST",
+    "source": "Soompi"
+  },
+  {
+    "title": "Beyond the Bar",
+    "releaseDate": "2025-08-02T22:40:00+09:00",
+    "poster": "images/beyondthebar.jpg",
+    "region": "Korea",
+    "network": "JTBC",
+    "schedule": "Saturdays at 10:40 p.m. & Sundays at 10:30 p.m. KST",
+    "source": "Soompi"
+  },
+  {
+    "title": "My Lovely Journey",
+    "releaseDate": "2025-08-02T21:20:00+09:00",
+    "poster": "images/mylovelyjourney.jpg",
+    "region": "Korea",
+    "network": "Channel A",
+    "schedule": "Saturdays & Sundays at 9:20 p.m. KST",
+    "source": "Soompi"
+  },
+  {
+    "title": "Love, Take Two",
+    "releaseDate": "2025-08-04T20:50:00+09:00",
+    "poster": "images/taketwo.jpg",
+    "region": "Korea",
+    "network": "tvN",
+    "schedule": "Mondays & Tuesdays at 8:50 p.m. KST",
+    "source": "Soompi"
+  },
+  {
+    "title": "Our Golden Days",
+    "releaseDate": "2025-08-09T20:00:00+09:00",
+    "poster": "images/goldendays.jpg",
+    "region": "Korea",
+    "network": "KBS2",
+    "schedule": "Saturdays & Sundays at 8 p.m. KST",
+    "source": "Soompi"
+  },
+  {
+    "title": "My Troublesome Star",
+    "releaseDate": "2025-08-18T22:00:00+09:00",
+    "poster": "images/troublesomestar.jpg",
+    "region": "Korea",
+    "network": "ENA",
+    "schedule": "Mondays & Tuesdays at 10 p.m. KST",
+    "source": "Soompi"
+  },
+  {
+    "title": "Aema",
+    "releaseDate": "2025-08-22T16:00:00+09:00",
+    "poster": "images/aema.jpg",
+    "network": "Netflix",
+    "schedule": "All episodes at 4 p.m. KST",
+    "source": "Soompi"
+  },
+  {
+    "title": "Bon Appetit, Your Majesty",
+    "releaseDate": "2025-08-23T21:10:00+09:00",
+    "poster": "images/bonappetit.jpg",
+    "region": "Korea",
+    "network": "tvN",
+    "schedule": "Saturdays & Sundays at 9:10 p.m. KST",
+    "source": "Soompi"
+  },
+  {
+    "title": "Twelve",
+    "releaseDate": "2025-08-23T21:20:00+09:00",
+    "poster": "images/twelve.jpg",
+    "region": "Korea",
+    "network": "KBS2",
+    "schedule": "Saturdays & Sundays at 9:20 p.m. KST",
+    "source": "Soompi"
+  },
+  {
+    "title": "Calming Waves",
+    "releaseDate": "2025-08-01",
+    "poster": "images/calmingwaves.jpg",
+    "region": "China",
+    "network": "iQIYI",
+    "schedule": "SVIP release",
+    "source": "Tonboriday"
+  },
+  {
+    "title": "Southern Emperor and Northern Beggar",
+    "releaseDate": "2025-08-05",
+    "poster": "images/southernemperor.jpg",
+    "region": "China",
+    "network": "Tencent Video",
+    "source": "Reddit"
+  },
+  {
+    "title": "Legend of the Female General",
+    "releaseDate": "2025-08-06T20:00:00+08:00",
+    "poster": "images/femalegeneral.jpg",
+    "region": "China",
+    "network": "Tencent Video & Mango TV",
+    "schedule": "8 p.m. CST",
+    "source": "Indiatimes"
+  },
+  {
+    "title": "When Destiny Brings the Demon",
+    "releaseDate": "2025-08-14",
+    "poster": "images/demon.jpg",
+    "region": "China",
+    "network": "Youku",
+    "source": "Tonboriday"
+  },
+  {
+    "title": "I'm the Most Beautiful Count",
+    "releaseDate": "2025-08-01",
+    "poster": "images/count.jpg",
+    "region": "Thailand",
+    "network": "iQIYI",
+    "source": "Indiatimes"
+  },
+  {
+    "title": "Shine",
+    "releaseDate": "2025-08-02",
+    "poster": "images/shine.jpg",
+    "region": "Thailand",
+    "network": "WeTV",
+    "source": "Indiatimes"
+  }
+]
