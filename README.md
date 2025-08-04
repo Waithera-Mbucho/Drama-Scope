@@ -16,7 +16,7 @@ Responsive DesignBuilt with CSS Grid and Flexbox to ensure seamless layouts on m
 
 # Technologies Used
 
-Frontend: HTML5, CSS3 (Flexbox, Grid, CSS Scroll Snap), Vanilla JavaScript (ES6+)
+Frontend: HTML5, CSS3 (Flexbox, Grid, CSS Scroll Snap), JavaScript (ES6+)
 
 Data: asset.json for drama metadata (titles, posters, genres, tropes, descriptions)
 
