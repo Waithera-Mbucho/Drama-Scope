@@ -21,20 +21,24 @@
     <p><a href="watchlist.html">Go to Watchlist</a></p>
   </main>
   <script type="module">
-    import { requireAuth, signOut } from './js/auth-helpers.js';
-
-    const user = await requireAuth();
-    if (user) {
-      document.getElementById('user-email').textContent = user.email;
+    import { sb } from './js/supabase-client.js';
+    // Check the current session on page load.
+    const { data: { session }, error } = await sb.auth.getSession();
+    if (error) {
+      console.error(error);
+    } else if (session) {
+      document.getElementById('user-email').textContent = session.user.email;
+    } else {
+      // No session means the user needs to sign in first.
+      window.location.href = 'auth/login.html';
     }
 
     document.getElementById('signout').addEventListener('click', async () => {
-      try {
-        await signOut();
-      } catch (err) {
-        console.error(err);
-      }
+      await sb.auth.signOut();
+      window.location.href = 'auth/login.html';
     });
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script type="module" src="./js/supabase-client.js"></script>
 </body>
 </html>

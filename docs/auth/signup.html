@@ -1,33 +1,3 @@
-<!--
-In Supabase Dashboard, enable "Email" provider.
-SQL to run in SQL Editor:
-
--- Profiles
-create table if not exists profiles (
-  id uuid primary key references auth.users(id) on delete cascade,
-  email text unique,
-  created_at timestamp with time zone default now()
-);
-alter table profiles enable row level security;
-create policy "users can manage their profile"
-  on profiles for all
-  using (auth.uid() = id) with check (auth.uid() = id);
-
--- Watchlist (for dramas/shows)
-create table if not exists watchlist (
-  id bigserial primary key,
-  user_id uuid not null references auth.users(id) on delete cascade,
-  title text not null,
-  created_at timestamp with time zone default now()
-);
-alter table watchlist enable row level security;
-create policy "read own watchlist"  on watchlist for select using (auth.uid() = user_id);
-create policy "insert own watchlist" on watchlist for insert with check (auth.uid() = user_id);
-create policy "delete own watchlist" on watchlist for delete using (auth.uid() = user_id);
-
--- Optional index
-create index if not exists watchlist_user_created_at on watchlist(user_id, created_at desc);
--->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -73,16 +43,10 @@ create index if not exists watchlist_user_created_at on watchlist(user_id, creat
       const password = document.getElementById('password').value.trim();
 
       try {
-        const { data, error } = await sb.auth.signUp({ email, password });
+         const { error } = await sb.auth.signUp({ email, password });
         if (error) throw error;
 
-        if (data.user) {
-          const { error: profileError } = await sb.from('profiles').insert({
-            id: data.user.id,
-            email
-          });
-          if (profileError) throw profileError;
-        }
+       // Email confirmations are on, so the user won't be logged in yet.
 
         messageEl.textContent = 'Check your email to confirm.';
         form.reset();
@@ -93,5 +57,7 @@ create index if not exists watchlist_user_created_at on watchlist(user_id, creat
       }
     });
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script type="module" src="../js/supabase-client.js"></script>
 </body>
 </html>

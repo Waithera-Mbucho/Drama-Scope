@@ -69,6 +69,32 @@ In the drama cards, click “Add to Watchlist” to save a drama.
 
 View watchlist.html to see saved dramas; click “Remove” to delete from your list.
 
+# Screenshots
+
+![Home Page](images/homepage.png)
+Home page
+
+![Discover Page](images/discoverpagescreenshot.png)
+Discover page
+
+![Release Page](images/releasespage.png)
+Release page
+
+![Watchlist Page](images/watchlistpage.png)
+Watchlist page
+
+![Details Page](images/detailspage.png)
+Details page
+
+![Sign In Page](docs/screenshots/signin.png)
+Sign-in page
+
+![Login Page](images/loginpage.png)
+Login page
+
+
+
+
 # Contributing
 
 Contributions are welcome! To propose changes:
