@@ -4,6 +4,8 @@ body {
   max-width: 400px;
   margin: 2rem auto;
   padding: 0 1rem;
+  background-color: #F5F5DC;
+  color: #000;
 }
 
 nav a {
