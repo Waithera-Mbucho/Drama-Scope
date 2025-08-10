@@ -24,6 +24,10 @@ Storage: Browser localStorage for watchlist persistence
 
 Deployment: GitHub Pages (served from the /docs directory)
 
+## Supabase configuration
+
+If using Supabase authentication, ensure your project's `SITE_URL` is set to the deployed site root (e.g., `https://waithera-mbucho.github.io/Drama-Scope/`) so email confirmation links resolve correctly.
+
 # Prerequisites
 
 A modern web browser (Chrome, Firefox, Safari, Edge)

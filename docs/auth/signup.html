@@ -43,7 +43,11 @@
       const password = document.getElementById('password').value.trim();
 
       try {
-         const { error } = await sb.auth.signUp({ email, password });
+          const siteUrl = new URL('../', window.location.href).href.replace(/\/$/, '');
+        const { error } = await sb.auth.signUp(
+          { email, password },
+          { emailRedirectTo: `${siteUrl}/auth/confirm.html` }
+        );
         if (error) throw error;
 
        // Email confirmations are on, so the user won't be logged in yet.

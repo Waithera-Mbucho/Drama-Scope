@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Confirm Signup</title>
+  <link rel="stylesheet" href="../styles/auth.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../account.html">Account</a>
+    <a href="../watchlist.html">Watchlist</a>
+    <a href="signup.html" class="btn">Sign Up</a>
+  </nav>
+  <main>
+    <h1>Confirming Signup</h1>
+    <p id="message" class="message"></p>
+  </main>
+  <script type="module">
+    import { sb } from '../js/supabase-client.js';
+
+    async function finalize() {
+      const messageEl = document.getElementById('message');
+      messageEl.textContent = 'Finalizing confirmation...';
+      try {
+        const url = new URL(window.location.href);
+        const code = url.searchParams.get('code');
+        if (code) {
+          const { error } = await sb.auth.exchangeCodeForSession(code);
+          if (error) throw error;
+        }
+        const { data: { session }, error: sessionError } = await sb.auth.getSession();
+        if (sessionError) throw sessionError;
+        if (session) {
+          window.location.href = '../account.html';
+        } else {
+          messageEl.textContent = 'No session found.';
+        }
+      } catch (err) {
+        messageEl.textContent = err.message;
+      }
+    }
+
+    finalize();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script type="module" src="../js/supabase-client.js"></script>
+</body>
+</html>
