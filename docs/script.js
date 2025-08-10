@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchBar = document.getElementById('searchBar');
   const genreDropdown = document.getElementById('genreDropdown');
   const dramaListDiv = document.getElementById('dramaList');
+   const releaseList = document.getElementById('releaseList');
   const carouselTrack = document.getElementById('allCarouselTrack');
   const detailsDiv = document.getElementById('details');
   const dramaCards = dramaListDiv ? Array.from(dramaListDiv.querySelectorAll('.drama-card')) : [];
@@ -60,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   
-  dramaListDiv?.addEventListener('click', e => {
+  function handleLike(e) {
     if (!e.target.classList.contains('like-btn')) return;
     const title = decodeURIComponent(e.target.dataset.title);
     const drama = dramas.find(d => d.title === title);
@@ -71,7 +72,9 @@ document.addEventListener('DOMContentLoaded', () => {
       localStorage.setItem('dramascope_watchlist', JSON.stringify(list));
     }
     e.target.classList.add('liked');
-  });
+  }
+  dramaListDiv?.addEventListener('click', handleLike);
+  releaseList?.addEventListener('click', handleLike);
   function showDetails() {
     const params = new URLSearchParams(location.search);
     const title = params.get('title');
@@ -122,5 +125,24 @@ document.addEventListener('DOMContentLoaded', () => {
         output.textContent = '';
       }
     }
+ updateCountdowns();
+    setInterval(updateCountdowns, 1000);
   }});
+
+function updateCountdowns() {
+  document.querySelectorAll('.countdown').forEach(span => {
+    const target = new Date(span.dataset.date);
+    const diff = target - new Date();
+    if (diff <= 0) {
+      span.textContent = '(Released)';
+      return;
+    }
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+    span.textContent = `(${days}d ${hours}h ${minutes}m ${seconds}s)`;
+  });
+}
+
 

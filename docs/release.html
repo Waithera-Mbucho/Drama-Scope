@@ -17,52 +17,98 @@
     </nav>
     <h1 class="page-title">Upcoming Releases</h1>
   </header>
-  <main id="releaseList" style="padding:2rem;"></main>
-  <script>
-    fetch('releases.json')
-      .then(r => r.json())
-      .then(list => {
-        list.sort((a, b) => new Date(a.releaseDate) - new Date(b.releaseDate));
-        const ul = document.createElement('ul');
-        ul.className = 'release-list';
-        list.forEach(item => {
-          const li = document.createElement('li');
-          li.className = 'release-item';
-          const date = new Date(item.releaseDate);
-          const schedule = item.schedule ? `, ${item.schedule}` : '';
-          const network = item.network ? ` on ${item.network}` : '';
-          li.innerHTML = `
-            <img src="${item.poster}" alt="${item.title} poster">
-            <div>
-              <strong>${item.title}</strong>
-              <p>${date.toDateString()}${schedule}${network} <span class="countdown" data-date="${item.releaseDate}"></span></p>
-            </div>
-          `;
-          ul.appendChild(li);
-        });
-        document.getElementById('releaseList').appendChild(ul);
-        updateCountdowns();
-        setInterval(updateCountdowns, 1000);
-      })
-      .catch(() => {
-        document.getElementById('releaseList').textContent = 'Failed to load release schedule.';
-      });
-
-    function updateCountdowns() {
-      document.querySelectorAll('.countdown').forEach(span => {
-        const target = new Date(span.dataset.date);
-        const diff = target - new Date();
-        if (diff <= 0) {
-          span.textContent = '(Released)';
-          return;
-        }
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-        const minutes = Math.floor((diff / (1000 * 60)) % 60);
-        const seconds = Math.floor((diff / 1000) % 60);
-        span.textContent = `(${days}d ${hours}h ${minutes}m ${seconds}s)`;
-      });
-    }
-  </script>
+   <main id="releaseList" class="discover-grid" style="padding:2rem;">
+    <div class="drama-card" data-title="Mary Kills People">
+      <button class="like-btn" data-title="Mary Kills People">❤</button>
+      <img src="images/marykills.jpg" alt="Mary Kills People poster">
+      <h3>Mary Kills People</h3>
+      <p>Fri Aug 01 2025, Fridays &amp; Saturdays at 10 p.m. KST on MBC <span class="countdown" data-date="2025-08-01T22:00:00+09:00"></span></p>
+    </div>
+    <div class="drama-card" data-title="Beyond the Bar">
+      <button class="like-btn" data-title="Beyond the Bar">❤</button>
+      <img src="images/beyondthebar.jpg" alt="Beyond the Bar poster">
+      <h3>Beyond the Bar</h3>
+      <p>Sat Aug 02 2025, Saturdays at 10:40 p.m. &amp; Sundays at 10:30 p.m. KST on JTBC <span class="countdown" data-date="2025-08-02T22:40:00+09:00"></span></p>
+    </div>
+    <div class="drama-card" data-title="My Lovely Journey">
+      <button class="like-btn" data-title="My Lovely Journey">❤</button>
+      <img src="images/mylovelyjourney.jpg" alt="My Lovely Journey poster">
+      <h3>My Lovely Journey</h3>
+      <p>Sat Aug 02 2025, Saturdays &amp; Sundays at 9:20 p.m. KST on Channel A <span class="countdown" data-date="2025-08-02T21:20:00+09:00"></span></p>
+    </div>
+    <div class="drama-card" data-title="Love, Take Two">
+      <button class="like-btn" data-title="Love, Take Two">❤</button>
+      <img src="images/taketwo.jpg" alt="Love, Take Two poster">
+      <h3>Love, Take Two</h3>
+      <p>Mon Aug 04 2025, Mondays &amp; Tuesdays at 8:50 p.m. KST on tvN <span class="countdown" data-date="2025-08-04T20:50:00+09:00"></span></p>
+    </div>
+    <div class="drama-card" data-title="Our Golden Days">
+      <button class="like-btn" data-title="Our Golden Days">❤</button>
+      <img src="images/goldendays.jpg" alt="Our Golden Days poster">
+      <h3>Our Golden Days</h3>
+      <p>Sat Aug 09 2025, Saturdays &amp; Sundays at 8 p.m. KST on KBS2 <span class="countdown" data-date="2025-08-09T20:00:00+09:00"></span></p>
+    </div>
+    <div class="drama-card" data-title="My Troublesome Star">
+      <button class="like-btn" data-title="My Troublesome Star">❤</button>
+      <img src="images/troublesomestar.jpg" alt="My Troublesome Star poster">
+      <h3>My Troublesome Star</h3>
+      <p>Mon Aug 18 2025, Mondays &amp; Tuesdays at 10 p.m. KST on ENA <span class="countdown" data-date="2025-08-18T22:00:00+09:00"></span></p>
+    </div>
+    <div class="drama-card" data-title="Aema">
+      <button class="like-btn" data-title="Aema">❤</button>
+      <img src="images/aema.jpg" alt="Aema poster">
+      <h3>Aema</h3>
+      <p>Fri Aug 22 2025, All episodes at 4 p.m. KST on Netflix <span class="countdown" data-date="2025-08-22T16:00:00+09:00"></span></p>
+    </div>
+    <div class="drama-card" data-title="Bon Appetit, Your Majesty">
+      <button class="like-btn" data-title="Bon Appetit, Your Majesty">❤</button>
+      <img src="images/bonappetit.jpg" alt="Bon Appetit, Your Majesty poster">
+      <h3>Bon Appetit, Your Majesty</h3>
+      <p>Sat Aug 23 2025, Saturdays &amp; Sundays at 9:10 p.m. KST on tvN <span class="countdown" data-date="2025-08-23T21:10:00+09:00"></span></p>
+    </div>
+    <div class="drama-card" data-title="Twelve">
+      <button class="like-btn" data-title="Twelve">❤</button>
+      <img src="images/twelve.jpg" alt="Twelve poster">
+      <h3>Twelve</h3>
+      <p>Sat Aug 23 2025, Saturdays &amp; Sundays at 9:20 p.m. KST on KBS2 <span class="countdown" data-date="2025-08-23T21:20:00+09:00"></span></p>
+    </div>
+    <div class="drama-card" data-title="Calming Waves">
+      <button class="like-btn" data-title="Calming Waves">❤</button>
+      <img src="images/calmingwaves.jpg" alt="Calming Waves poster">
+      <h3>Calming Waves</h3>
+      <p>Fri Aug 01 2025, SVIP release on iQIYI <span class="countdown" data-date="2025-08-01"></span></p>
+    </div>
+    <div class="drama-card" data-title="Southern Emperor and Northern Beggar">
+      <button class="like-btn" data-title="Southern Emperor and Northern Beggar">❤</button>
+      <img src="images/southernemperor.jpg" alt="Southern Emperor and Northern Beggar poster">
+      <h3>Southern Emperor and Northern Beggar</h3>
+      <p>Tue Aug 05 2025 on Tencent Video <span class="countdown" data-date="2025-08-05"></span></p>
+    </div>
+    <div class="drama-card" data-title="Legend of the Female General">
+      <button class="like-btn" data-title="Legend of the Female General">❤</button>
+      <img src="images/femalegeneral.jpg" alt="Legend of the Female General poster">
+      <h3>Legend of the Female General</h3>
+      <p>Wed Aug 06 2025, 8 p.m. CST on Tencent Video &amp; Mango TV <span class="countdown" data-date="2025-08-06T20:00:00+08:00"></span></p>
+    </div>
+    <div class="drama-card" data-title="When Destiny Brings the Demon">
+      <button class="like-btn" data-title="When Destiny Brings the Demon">❤</button>
+      <img src="images/demon.jpg" alt="When Destiny Brings the Demon poster">
+      <h3>When Destiny Brings the Demon</h3>
+      <p>Thu Aug 14 2025 on Youku <span class="countdown" data-date="2025-08-14"></span></p>
+    </div>
+    <div class="drama-card" data-title="I'm the Most Beautiful Count">
+      <button class="like-btn" data-title="I'm the Most Beautiful Count">❤</button>
+      <img src="images/count.jpg" alt="I'm the Most Beautiful Count poster">
+      <h3>I'm the Most Beautiful Count</h3>
+      <p>Fri Aug 01 2025 on iQIYI <span class="countdown" data-date="2025-08-01"></span></p>
+    </div>
+    <div class="drama-card" data-title="Shine">
+      <button class="like-btn" data-title="Shine">❤</button>
+      <img src="images/shine.jpg" alt="Shine poster">
+      <h3>Shine</h3>
+      <p>Sat Aug 02 2025 on WeTV <span class="countdown" data-date="2025-08-02"></span></p>
+    </div>
+  </main>
+  <script src="script.js"></script>
 </body>
 </html>
