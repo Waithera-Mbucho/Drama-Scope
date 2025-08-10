@@ -8,6 +8,11 @@ body {
   flex-direction: column;
   min-height: 100vh;
   font-family: 'Roboto', sans-serif;
+  background-color: #F5F5DC;
+  color: #000;
+}
+
+body.discover {
   background-color: #111;
   color: #FF69B4;
 }
