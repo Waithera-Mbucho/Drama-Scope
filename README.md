@@ -1,116 +1,84 @@
 # DramaScope
 
-DramaScope is a responsive, client-side web application for discovering, filtering, and tracking your favorite Asian dramas. With a rich set of features—including dynamic search, multi‑select genre & trope filters, a touch‑friendly carousel, and a persistent watchlist—DramaScope delivers an engaging browsing experience without any server-side dependencies.
+DramaScope is a responsive, client-side web application for discovering, filtering, and tracking Asian dramas. It uses static HTML, CSS, and JavaScript so it can be served from a simple web server or GitHub Pages.
 
-# Features
+## Features
+- **Dynamic search and filtering** – real-time filtering by title, genres, and narrative tropes using client-side JavaScript and an external JSON data source.
+- **Multi-select genre & trope panels** – accessible `<details>` panels let users choose multiple genres or tropes with AND logic.
+- **Touch-friendly carousel** – a single-row, horizontally scrollable featured carousel with CSS scroll-snap; hover or tap a poster to reveal its release year.
+- **Persistent watchlist** – add or remove dramas from a personal list stored in `localStorage`.
+- **Responsive design** – layouts built with CSS Grid and Flexbox work across mobile, tablet, and desktop screens.
 
-Dynamic Search & FilteringReal‑time, reload‑free filtering by title, genres, and narrative tropes using client‑side JavaScript and an external JSON data source.
+## Screenshots
+![Home Page](docs/images/homepage.png)
+*Home page*
 
-Multi‑Select Genre & Trope PanelsAccessible collapsible <details> panels that let users select multiple genres and tropes simultaneously, applying AND‑logic to refine results.
+![Discover Page](docs/images/discoverpagescreenshot.png)
+*Discover page*
 
-Touch‑Friendly CarouselA single‑row, horizontally scrollable featured carousel with CSS scroll-snap; hover or tap on a poster to reveal its release year.
+![Releases Page](docs/images/releasespage.png)
+*Upcoming releases*
 
-Persistent WatchlistAdd or remove dramas from a personal watchlist stored in localStorage, preserving user selections across sessions.
+![Watchlist Page](docs/images/watchlistpage.png)
+*Watchlist management*
 
-Responsive DesignBuilt with CSS Grid and Flexbox to ensure seamless layouts on mobile, tablet, and desktop viewports.
+![Details Page](docs/images/detailspage.png)
+*Drama details*
 
-# Technologies Used
+![Login Page](docs/images/loginpage.png)
+*Login form*
 
-Frontend: HTML5, CSS3 (Flexbox, Grid, CSS Scroll Snap), JavaScript (ES6+)
+## Page Guide
+- **`index.html`** – landing page with a touch-friendly carousel of featured dramas.
+- **`drama.html`** – search and filter catalogue by title, genre, or trope.
+- **`details.html`** – view ratings, synopsis, and other metadata for a selected drama.
+- **`watchlist.html`** – shows items saved in `localStorage` and lets users remove them.
+- **`release.html`** – countdown list of upcoming dramas.
+- **`auth/login.html` & `auth/signup.html`** – Supabase-powered authentication pages.
+- **`account.html`** – displays user profile information and a sign‑out option.
 
-Data: asset.json for drama metadata (titles, posters, genres, tropes, descriptions)
+Scripts powering these pages live under `docs/js/` (e.g. `watchlist.js`, `supabase-client.js`).
 
-Storage: Browser localStorage for watchlist persistence
+## Supabase Configuration
+1. [Create a Supabase project](https://supabase.com/).
+2. Copy the project URL and anon key.
+3. Replace the placeholders in `docs/js/supabase-client.js`:
+   ```js
+   export const sb = window.supabase.createClient(
+     'https://YOUR-PROJECT.supabase.co',
+     'YOUR-ANON-KEY'
+   );
+   ```
+4. Ensure your project's `SITE_URL` matches the deployed site root so email confirmations resolve correctly.
+5. Create `profiles` and `watchlist` tables as described in the HTML comments of the auth pages.
 
-Deployment: GitHub Pages (served from the /docs directory)
+## Watchlist Behaviour
+Clicking **Add to Watchlist** on a drama card stores its data in `localStorage` under `dramascope_watchlist`. Visiting `watchlist.html` renders saved items and allows removal via the **Remove** button.
 
-## Supabase configuration
+## Local Development
+```bash
+# Clone and enter the repository
+ git clone https://github.com/your-username/DramaScope.git
+ cd DramaScope/docs
 
-If using Supabase authentication, ensure your project's `SITE_URL` is set to the deployed site root (e.g., `https://waithera-mbucho.github.io/Drama-Scope/`) so email confirmation links resolve correctly.
+# Serve the site locally
+ python3 -m http.server 8000
+```
+Open <http://localhost:8000/index.html> in your browser.
 
-# Prerequisites
+## Deployment
+Deploy the `docs/` directory to GitHub Pages. Ensure `index.html`, `drama.html`, `watchlist.html`, `release.html`, `asset.json`, `images/`, and `js/` are all inside `docs/`.
 
-A modern web browser (Chrome, Firefox, Safari, Edge)
+## External Resources
+- [Google Fonts](https://fonts.google.com/) – Roboto, Rubik Moonrocks, and Lemon.
+- [Supabase JavaScript Client](https://cdn.jsdelivr.net/npm/@supabase/supabase-js) loaded via CDN.
 
-(Optional) A simple HTTP server for local testing, such as Python’s built‑in server:
+## Contributing
+Documentation fixes and code improvements are welcome.
+1. Fork the repository.
+2. Create a feature branch.
+3. Commit your changes and open a Pull Request against `main`.
+4. Include relevant screenshots when updating documentation.
 
-# Python 3
-python3 -m http.server 8000
-
-Installation & Setup
-
-Clone the repository
-
-git clone https://github.com/your-username/DramaScope.git
-cd DramaScope/docs
-
-Serve locally (if you want to test before deploying):
-
-# From inside the docs/ folder
-python3 -m http.server 8000
-
-Then open http://localhost:8000/index.html in your browser.
-
-Deploy to GitHub Pages
-
-Ensure your index.html, drama.html, watchlist.html, asset.json, images/, and script/ folders all live under the docs/ directory.
-
-Push to main (or master)—GitHub Pages will automatically publish at:https://your-username.github.io/DramaScope/
-
-# Usage
-
-Home Page CarouselSwipe or scroll horizontally through featured dramas. Hover or tap on a poster to reveal the release year.
-
-Discover DramasNavigate to drama.html:
-
-Search: Type in the search bar to filter by title.
-
-Genres & Tropes: Expand the panels, select multiple checkboxes, and watch the results update instantly.
-
-# Manage Watchlist
-
-In the drama cards, click “Add to Watchlist” to save a drama.
-
-View watchlist.html to see saved dramas; click “Remove” to delete from your list.
-
-# Screenshots
-
-![Home Page](images/homepage.png)
-Home page
-
-![Discover Page](images/discoverpagescreenshot.png)
-Discover page
-
-![Release Page](images/releasespage.png)
-Release page
-
-![Watchlist Page](images/watchlistpage.png)
-Watchlist page
-
-![Details Page](images/detailspage.png)
-Details page
-
-![Sign In Page](docs/screenshots/signin.png)
-Sign-in page
-
-![Login Page](images/loginpage.png)
-Login page
-
-
-
-
-# Contributing
-
-Contributions are welcome! To propose changes:
-
-Fork the repository.
-
-Create a feature branch (git checkout -b feature/YourFeature).
-
-Make your changes and commit (git commit -m "Add Awesome Feature").
-
-Push to your branch (git push origin feature/YourFeature).
-
-Open a Pull Request against the main branch.
-
-Please follow the project’s Code of Conduct and ensure your code is well-documented and tested.
+---
+This project is released under the [MIT License](LICENSE).
