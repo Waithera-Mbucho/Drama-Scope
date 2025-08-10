@@ -1,0 +1,49 @@
+/* Minimal styling for auth and watchlist pages */
+body {
+  font-family: Arial, sans-serif;
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+nav a {
+  margin-right: 1rem;
+}
+
+form {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+input, button {
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+button {
+  cursor: pointer;
+}
+
+.message {
+  color: #d00;
+  margin-top: 0.5rem;
+}
+
+.note {
+  font-size: 0.875rem;
+  color: #555;
+}
+
+ul#watchlist {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+ul#watchlist li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.25rem 0;
+}

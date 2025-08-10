@@ -1,0 +1,96 @@
+<!--
+In Supabase Dashboard, enable "Email" provider.
+SQL to run in SQL Editor:
+
+-- Profiles
+create table if not exists profiles (
+  id uuid primary key references auth.users(id) on delete cascade,
+  email text unique,
+  created_at timestamp with time zone default now()
+);
+alter table profiles enable row level security;
+create policy "users can manage their profile"
+  on profiles for all
+  using (auth.uid() = id) with check (auth.uid() = id);
+
+-- Watchlist (for dramas/shows)
+create table if not exists watchlist (
+  id bigserial primary key,
+  user_id uuid not null references auth.users(id) on delete cascade,
+  title text not null,
+  created_at timestamp with time zone default now()
+);
+alter table watchlist enable row level security;
+create policy "read own watchlist"  on watchlist for select using (auth.uid() = user_id);
+create policy "insert own watchlist" on watchlist for insert with check (auth.uid() = user_id);
+create policy "delete own watchlist" on watchlist for delete using (auth.uid() = user_id);
+
+-- Optional index
+create index if not exists watchlist_user_created_at on watchlist(user_id, created_at desc);
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="../styles/auth.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../account.html">Account</a>
+    <a href="../watchlist.html">Watchlist</a>
+  </nav>
+  <main>
+    <h1>Sign Up</h1>
+    <p class="note">Data protected by Supabase RLS</p>
+    <form id="signup-form">
+      <label>Email <input type="email" id="email" required /></label>
+      <label>Password <input type="password" id="password" required /></label>
+      <button type="submit">Sign Up</button>
+    </form>
+    <p id="message" class="message"></p>
+    <p><a href="login.html">Already have an account? Log in</a></p>
+  </main>
+  <script type="module">
+    import { sb } from '../js/supabase-client.js';
+    import { redirectIfAuthed } from '../js/auth-helpers.js';
+
+    // Redirect if already logged in
+    redirectIfAuthed();
+
+    const form = document.getElementById('signup-form');
+    const messageEl = document.getElementById('message');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      messageEl.textContent = '';
+      form.querySelector('button').disabled = true;
+
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      try {
+        const { data, error } = await sb.auth.signUp({ email, password });
+        if (error) throw error;
+
+        if (data.user) {
+          const { error: profileError } = await sb.from('profiles').insert({
+            id: data.user.id,
+            email
+          });
+          if (profileError) throw profileError;
+        }
+
+        messageEl.textContent = 'Check your email to confirm.';
+        form.reset();
+      } catch (err) {
+        messageEl.textContent = err.message;
+      } finally {
+        form.querySelector('button').disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>

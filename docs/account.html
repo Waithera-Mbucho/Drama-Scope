@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Account</title>
+  <link rel="stylesheet" href="styles/auth.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="account.html">Account</a>
+    <a href="watchlist.html">Watchlist</a>
+  </nav>
+  <main>
+    <h1>Account</h1>
+    <p class="note">Data protected by Supabase RLS</p>
+    <p id="user-email"></p>
+    <button id="signout">Sign Out</button>
+    <p><a href="watchlist.html">Go to Watchlist</a></p>
+  </main>
+  <script type="module">
+    import { requireAuth, signOut } from './js/auth-helpers.js';
+
+    const user = await requireAuth();
+    if (user) {
+      document.getElementById('user-email').textContent = user.email;
+    }
+
+    document.getElementById('signout').addEventListener('click', async () => {
+      try {
+        await signOut();
+      } catch (err) {
+        console.error(err);
+      }
+    });
+  </script>
+</body>
+</html>

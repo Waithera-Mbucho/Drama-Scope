@@ -1,0 +1,57 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login</title>
+  <link rel="stylesheet" href="../styles/auth.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../account.html">Account</a>
+    <a href="../watchlist.html">Watchlist</a>
+  </nav>
+  <main>
+    <h1>Login</h1>
+    <p class="note">Data protected by Supabase RLS</p>
+    <form id="login-form">
+      <label>Email <input type="email" id="email" required /></label>
+      <label>Password <input type="password" id="password" required /></label>
+      <button type="submit">Log In</button>
+    </form>
+    <p id="message" class="message"></p>
+    <p><a href="signup.html">Need an account? Sign up</a></p>
+  </main>
+  <script type="module">
+    import { sb } from '../js/supabase-client.js';
+    import { redirectIfAuthed } from '../js/auth-helpers.js';
+
+    // If already logged in, go to the account page
+    redirectIfAuthed();
+
+    const form = document.getElementById('login-form');
+    const messageEl = document.getElementById('message');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      messageEl.textContent = '';
+      form.querySelector('button').disabled = true;
+
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      try {
+        const { data, error } = await sb.auth.signInWithPassword({ email, password });
+        if (error) throw error;
+        window.location.href = '../account.html';
+      } catch (err) {
+        messageEl.textContent = err.message;
+      } finally {
+        form.querySelector('button').disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
+

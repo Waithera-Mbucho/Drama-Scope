@@ -232,3 +232,55 @@ countdown {
 .release-item p {
   margin: 0.25rem 0 0;
 }
+
+/* Watchlist page styles */
+.watchlist-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+  align-items: center;
+}
+
+.watchlist-card {
+  display: flex;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 600px;
+  width: 100%;
+  background: #fff;
+  color: #000;
+}
+
+.watchlist-card img {
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.watchlist-info {
+  padding: 0.5rem;
+  flex: 1;
+}
+
+.badge {
+  display: inline-block;
+  background: #eee;
+  border-radius: 4px;
+  padding: 2px 6px;
+  margin: 2px 2px;
+  font-size: 0.7rem;
+  color: #000;
+}
+
+.remove-btn {
+  background: crimson;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  align-self: center;
+  margin-right: 1rem;
+  border-radius: 4px;
+}

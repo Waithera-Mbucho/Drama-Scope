@@ -2,89 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DramaScope – Your Watchlist</title>
-
-  <!-- your main stylesheet (inside docs/style/) -->
-  <link rel="stylesheet" href="style.css"/>
-
-  <style>
-    /* fallback styling */
-    body { font-family: system-ui,sans-serif; margin:0; }
-    header { background:#111; color:#fff; padding:1rem; text-align:center; }
-    nav a { color:#eee; margin:0 .5rem; text-decoration:none; }
-    nav a:hover { text-decoration:underline; }
-    main { padding:1rem; }
-    .drama-card { 
-      display:flex; 
-      border:1px solid #ddd; 
-      border-radius:8px; 
-      overflow:hidden; 
-      margin-bottom:1rem;
-    }
-    .drama-card img { width:100px; height:150px; object-fit:cover; }
-    .drama-info { padding:0.5rem; flex:1; }
-    .drama-info h3 { margin:0 0 .25rem; }
-    .badge { display:inline-block; background:#eee; border-radius:4px; padding:2px 6px; margin:2px 2px; font-size:.7rem; }
-    .remove-btn {
-      background:crimson; color:#fff; border:none; padding:.5rem 1rem; cursor:pointer;
-      align-self:center; margin-right:1rem; border-radius:4px;
-    }
-  </style>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DramaScope - Watchlist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&family=Roboto:wght@400;700&family=Lemon&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <header>
+  <header class="banner"></header>
     <nav>
-      <a href="index.html">Home</a> |
-      <a href="drama.html">Discover Dramas</a> |
-      <a href="watchlist.html">My Watchlist</a>
-      <a href="watchlist.html">My Watchlist</a> |
-      <a href="release.html">Releases</a> |
-      <a href="signin.html">Sign In</a>
+      <a href="index.html" class="btn">Home</a>
+      <a href="drama.html" class="btn">Discover</a>
+      <a href="watchlist.html" class="btn">Watchlist</a>
+      <a href="release.html" class="btn">Releases</a>
+      <a href="signin.html" class="btn">Sign In</a>
     </nav>
-    <h1>🎬 Your Watchlist</h1>
+   <h1 class="page-title">Your Watchlist</h1>
   </header>
 
-  <main id="watchlistContainer">
-    <!-- JS will inject either a message or drama cards here -->
+  <main>
+     <section id="watchlistContainer" class="watchlist-container">
+      <!-- JS will inject either a message or drama cards here -->
+     </section>
   </main>
-
-  <script>
-    const container = document.getElementById('watchlistContainer');
-    const list = JSON.parse(localStorage.getItem('dramascope_watchlist')) || [];
-
-    if (list.length === 0) {
-      container.innerHTML = '<p>You haven’t added any dramas yet. Go to <a href="drama.html">Discover Dramas</a> to start!</p>';
-    } else {
-      // build cards
-      list.forEach((d,i) => {
-        const card = document.createElement('div');
-        card.className = 'drama-card';
-        card.innerHTML = `
-          <img src="${d.poster}" alt="${d.title} poster">
-          <div class="drama-info">
-            <h3>${d.title}</h3>
-            <p>${d.year} • ${d.country}</p>
-            ${d.genres.map(g=>`<span class="badge">${g}</span>`).join('')}
-            <br/>
-            ${d.tropes.slice(0,3).map(t=>`<span class="badge">${t}</span>`).join('')}
-          </div>
-          <button class="remove-btn" data-idx="${i}">Remove</button>
-        `;
-        container.appendChild(card);
-      });
-
-      // removal handler
-      container.addEventListener('click', e => {
-        if (!e.target.matches('.remove-btn')) return;
-        const idx = +e.target.dataset.idx;
-        list.splice(idx,1);
-        localStorage.setItem('dramascope_watchlist', JSON.stringify(list));
-        location.reload();
-      });
-    }
-  </script>
-
+ <footer>
+    <p>Built with by Waithera Mbucho | © 2024 DramaScope</p>
+  </footer>
+   <script src="../js/watchlist.js"></script>
 </body>
 </html>
